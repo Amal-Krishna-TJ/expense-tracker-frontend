@@ -1,3 +1,9 @@
+:host {
+    display: block;
+    min-height: 100vh;
+    background: #FFFFFF;
+}
+
 .hero-section{
 
     background:#003049;

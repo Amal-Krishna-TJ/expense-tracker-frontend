@@ -17,6 +17,12 @@
 
 }
 
+:host {
+    display: block;
+    min-height: 100vh;
+    background: #FFFFFF;
+}
+
 /* Card */
 .filter-card{
 
