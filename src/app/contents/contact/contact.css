@@ -197,6 +197,14 @@
 }
 
 /* Social */
+.social-section{
+
+    background-color: #003049;
+
+    color: #FFFFF4;
+
+}
+
 .social-icons i{
 
     width:60px;
@@ -208,6 +216,8 @@
     text-align:center;
 
     border-radius:50%;
+
+    color: #FFFFF4;
 
     background:#F77F00;
 
