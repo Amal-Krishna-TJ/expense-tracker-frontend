@@ -1,7 +1,7 @@
-body{
-
-    background:#FFFFF4;
-
+:host {
+    display: block;
+    min-height: 100vh;
+    background: #FFFFF4;
 }
 
 /* HERO */
