@@ -71,6 +71,10 @@ export class Profile implements OnInit {
 
   };
 
+  user = JSON.parse(localStorage.getItem('loggedInUser') || '{}');
+
+  isAdmin = this.user.role === 'admin';
+
   displayTotalUsers = 0;
   displayTotalTransactionns = 0;
   displayTotalExpense = 0;
