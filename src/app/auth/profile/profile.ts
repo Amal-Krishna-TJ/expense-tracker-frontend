@@ -577,8 +577,6 @@ heroColors = [
 
       next:(res:any)=>{
 
-        this.users = res.users;
-
         this.users = res.users.filter((user:any) => user.role !== 'admin');
 
         this.animateNumber(this.dashboard.totalUsers, value => this.displayTotalUsers = value);
