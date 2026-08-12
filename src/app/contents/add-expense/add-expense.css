@@ -1,0 +1,1757 @@
+/* Expense */
+.expense-page {
+
+    height: 105vh;
+
+    background: #FFFFF4;
+
+}
+
+
+.expense-header {
+
+    background: #003049;
+
+    color: #FFFFF4;
+
+    padding: 100px 0 120px;
+
+}
+
+.expense-header .container {
+
+    animation: fadeUp .7s ease;
+
+}
+
+.expense-header h1 {
+
+    font-size: 48px;
+
+    font-weight: 700;
+
+}
+
+.expense-header p {
+
+    margin: 0;
+
+    opacity: .85;
+
+    font-size: 18px;
+
+}
+
+
+.expense-section {
+
+    margin-top: -70px;
+
+    padding-bottom: 60px;
+
+}
+
+.expense-card {
+
+    max-width: 950px;
+
+    margin: auto;
+
+    background: white;
+
+    padding: 40px;
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 15px 45px rgba(0, 48, 73, .15);
+
+    animation: cardEntrance .7s ease;
+
+}
+
+/* Page */
+.page-tag {
+
+    display: inline-block;
+
+    background: #F77F00;
+
+    color: white;
+
+    padding: 8px 18px;
+
+    border-radius: 30px;
+
+    margin-bottom: 15px;
+
+    font-size: 14px;
+
+}
+
+/* Card */
+.card-heading {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 35px;
+
+}
+
+.card-heading h2 {
+
+    color: #003049;
+
+    font-weight: 700;
+
+}
+
+.card-heading p {
+
+    color: #777;
+
+    margin: 0;
+
+}
+
+.heading-icon {
+
+    width: 60px;
+
+    height: 60px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #003049;
+
+    color: #FFFFF4;
+
+    border-radius: 50%;
+
+    font-size: 22px;
+
+}
+
+/* Form */
+.form-label {
+
+    color: #003049;
+
+    font-weight: 600;
+
+    margin-bottom: 8px;
+
+}
+
+.form-control,
+.form-select {
+
+    min-height: 50px;
+
+    border-radius: 12px;
+
+    border: 1px solid #ddd;
+
+    padding: 12px 15px;
+
+    transition: .3s ease;
+
+}
+
+.form-control:focus,
+.form-select:focus {
+
+    border-color: #00BF7C;
+
+    box-shadow:
+        0 0 0 4px rgba(0, 191, 124, .12);
+
+}
+
+.form-actions {
+
+    display: flex;
+
+    justify-content: flex-end;
+
+    gap: 15px;
+
+    margin-top: 35px;
+
+}
+
+/* Input */
+.input-group-custom {
+
+    position: relative;
+
+}
+
+.input-group-custom input {
+
+    padding-left: 45px;
+
+}
+
+.input-icon {
+
+    position: absolute;
+
+    left: 18px;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    color: #00BF7C;
+
+    font-weight: 700;
+
+    z-index: 2;
+
+}
+
+/* Category */
+.category-wrapper {
+
+    display: flex;
+
+    gap: 10px;
+
+}
+
+.category-wrapper .form-select {
+
+    flex: 1;
+
+}
+
+.add-category-btn {
+
+    width: 52px;
+
+    min-width: 52px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background: #F77F00;
+
+    color: white;
+
+    font-size: 18px;
+
+    transition: .3s ease;
+
+}
+
+.add-category-btn:hover {
+
+    background: #003049;
+
+    transform: scale(1.1);
+
+}
+
+.category-badge {
+
+    background:
+        rgba(0, 191, 124, .12);
+
+    color: #008c5c;
+
+    padding: 7px 12px;
+
+    border-radius: 20px;
+
+}
+
+/* Button */
+
+.reset-btn,
+.save-btn {
+
+    border: none;
+
+    padding: 13px 25px;
+
+    border-radius: 50px;
+
+    transition: .3s ease;
+
+}
+
+.reset-btn {
+
+    background: #eeeeee;
+
+    color: #003049;
+
+}
+
+.save-btn {
+
+    background: #F77F00;
+
+    color: white;
+
+    font-weight: 600;
+
+}
+
+.reset-btn:hover {
+
+    background: #ddd;
+
+}
+
+.save-btn:hover {
+
+    background: #003049;
+
+    box-shadow:
+        0 10px 20px rgba(0, 48, 73, .25);
+
+}
+
+/* Recent */
+.recent-section {
+
+    padding: 20px 0 80px;
+
+}
+
+.recent-card {
+
+    background: white;
+
+    border-radius: 25px;
+
+    padding: 35px;
+
+    box-shadow:
+        0 10px 30px rgba(0, 48, 73, .08);
+
+}
+
+.recent-heading {
+
+    margin-bottom: 25px;
+
+}
+
+.recent-heading h2 {
+
+    color: #003049;
+
+}
+
+.recent-heading p {
+
+    color: #777;
+
+}
+
+/* Expense Table */
+.expense-table thead th {
+
+    background: #003049;
+
+    color: #FFFFF4;
+
+    padding: 15px;
+
+}
+
+.expense-table tbody td {
+
+    padding: 15px;
+
+    vertical-align: middle;
+
+}
+
+.expense-table tbody tr {
+
+    transition: .3s;
+
+}
+
+.expense-table tbody tr:hover {
+
+    background:
+        rgba(247, 127, 0, .07);
+
+}
+
+.amount {
+
+    color: #F77F00;
+
+    font-weight: 700;
+
+}
+
+/* Delete */
+.delete-btn {
+
+    border: none;
+
+    width: 38px;
+
+    height: 38px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(247, 127, 0, .12);
+
+    color: #F77F00;
+
+    transition: .3s;
+
+}
+
+.delete-btn:hover {
+
+    background: #F77F00;
+
+    color: white;
+
+    transform: scale(1.1);
+
+}
+
+/* Empty */
+.empty-expenses {
+
+    text-align: center;
+
+    padding: 50px;
+
+    color: #777;
+
+}
+
+.empty-expenses i {
+
+    font-size: 45px;
+
+    color: #F77F00;
+
+    margin-bottom: 15px;
+
+}
+
+/* Modal */
+.category-modal-overlay {
+
+    position: fixed;
+
+    inset: 0;
+
+    background:
+        rgba(0, 0, 0, .6);
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    z-index: 9999;
+
+    animation: fadeIn .3s ease;
+
+}
+
+.category-modal {
+
+    width: 420px;
+
+    max-width: 90%;
+
+    background: #003049;
+
+    color: #FFFFF4;
+
+    padding: 35px;
+
+    border-radius: 25px;
+
+    animation: modalPopup .4s ease;
+
+}
+
+.modal-icon {
+
+    width: 65px;
+
+    height: 65px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background: #F77F00;
+
+    border-radius: 50%;
+
+    font-size: 25px;
+
+    margin-bottom: 20px;
+
+}
+
+.category-modal p {
+
+    color: rgba(255,255,255,.7);
+
+}
+
+.category-modal .form-label {
+
+    color: white;
+
+}
+
+.modal-actions {
+
+    display: flex;
+
+    justify-content: flex-end;
+
+    gap: 12px;
+
+    margin-top: 25px;
+
+}
+
+.modal-cancel-btn,
+.modal-save-btn {
+
+    border: none;
+
+    padding: 11px 20px;
+
+    border-radius: 50px;
+
+}
+
+.modal-cancel-btn {
+
+    background: #FFFFF4;
+
+    color: #003049;
+
+}
+
+.modal-save-btn {
+
+    background: #F77F00;
+
+    color: white;
+
+}
+
+/* Successs */
+.success-toast {
+
+    position: fixed;
+
+    right: 30px;
+
+    bottom: 30px;
+
+    background: #003049;
+
+    color: white;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 18px 25px;
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,.25);
+
+    z-index: 10000;
+
+    animation: slideToast .5s ease;
+
+}
+
+.success-toast p {
+
+    margin: 3px 0 0;
+
+    font-size: 13px;
+
+}
+
+.success-icon {
+
+    width: 40px;
+
+    height: 40px;
+
+    background: #00BF7C;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+}
+
+/* Animations */
+@keyframes fadeUp {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(30px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
+
+}
+
+@keyframes cardEntrance {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(50px)
+            scale(.97);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+    }
+
+}
+
+@keyframes fadeIn {
+
+    from {
+
+        opacity: 0;
+
+    }
+
+    to {
+
+        opacity: 1;
+
+    }
+
+}
+
+@keyframes modalPopup {
+
+    from {
+
+        opacity: 0;
+
+        transform: scale(.75);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: scale(1);
+
+    }
+
+}
+
+@keyframes slideToast {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateX(100px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateX(0);
+
+    }
+
+}
+
+
+@media(max-width: 768px) {
+
+    .expense-header {
+
+        padding: 60px 0 100px;
+
+    }
+
+    .expense-header h1 {
+
+        font-size: 36px;
+
+    }
+
+    .expense-card {
+
+        padding: 25px;
+
+    }
+
+    .card-heading {
+
+        align-items: flex-start;
+
+    }
+
+    .heading-icon {
+
+        display: none;
+
+    }
+
+    .form-actions {
+
+        flex-direction: column;
+
+    }
+
+    .reset-btn,
+    .save-btn {
+
+        width: 100%;
+
+    }
+
+    .success-toast {
+
+        left: 20px;
+
+        right: 20px;
+
+        bottom: 20px;
+
+    }
+
+}
+
+/* ===========================
+   Background
+=========================== */
+
+body{
+
+    background:#FFFFF4;
+
+}
+
+/* ===========================
+   Hero Section
+=========================== */
+
+.hero-section{
+
+    background:#003049;
+    color:white;
+
+    padding:110px 0;
+
+    margin-bottom:70px;
+
+}
+
+.hero-section h1{
+
+    font-size:48px;
+
+    font-weight:700;
+
+}
+
+.hero-section p{
+
+    margin-top:15px;
+
+    font-size:18px;
+
+    opacity:.9;
+
+}
+
+.hero-line{
+
+    width:120px;
+
+    height:5px;
+
+    background:#F77F00;
+
+    border-radius:20px;
+
+    margin-top:20px;
+
+}
+
+/* ===========================
+   Hero Icon
+=========================== */
+
+.hero-icon-circle{
+
+    width:170px;
+
+    height:170px;
+
+    margin:auto;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:#F77F00;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.25);
+
+    animation:float 3s ease-in-out infinite;
+
+}
+
+.hero-icon-circle i{
+
+    font-size:75px;
+
+    color:white;
+
+}
+
+/* ===========================
+   Upload Card
+=========================== */
+
+.upload-card{
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:50px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+    animation:fadeUp .8s ease;
+
+}
+
+.upload-area{
+
+    border:3px dashed #F77F00;
+
+    border-radius:20px;
+
+    padding:60px 30px;
+
+    text-align:center;
+
+    transition:.3s;
+
+}
+
+.upload-area:hover{
+
+    background:#fff9f1;
+
+}
+
+.upload-icon{
+
+    font-size:80px;
+
+    color:#F77F00;
+
+    margin-bottom:20px;
+
+}
+
+/* ===========================
+   Preview Card
+=========================== */
+
+.preview-card{
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:40px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+    animation:fadeUp .8s ease;
+
+}
+
+/* ===========================
+   Table
+=========================== */
+
+.table{
+
+    margin-bottom:0;
+
+}
+
+.table thead{
+
+    background:#003049;
+
+    color:white;
+
+}
+
+.table thead th{
+
+    border:none;
+
+    padding:15px;
+
+}
+
+.table tbody td{
+
+    vertical-align:middle;
+
+    padding:14px;
+
+}
+
+.table tbody tr:hover{
+
+    background:#fff8ee;
+
+}
+
+/* ===========================
+   Buttons
+=========================== */
+
+.select-btn{
+
+    border-radius: 15px;
+
+    background: #003049;
+
+}
+
+.select-btn:hover{
+
+    background: #00BF7C;
+    
+}
+
+.btn-template:hover{
+
+    background:#01263c;
+
+    color:white;
+
+    transform:translateY(-3px);
+
+}
+
+.btn-import{
+
+    background:#F77F00;
+
+    color:white;
+
+}
+
+.btn-import:hover{
+
+    background:#d96c00;
+
+    color:white;
+
+    transform:translateY(-3px);
+
+}
+
+/* ===========================
+   Alerts
+=========================== */
+
+.alert{
+
+    border-radius:12px;
+
+}
+
+/* ===========================
+   Badge
+=========================== */
+
+.badge{
+
+    font-size:15px;
+
+    padding:10px 18px;
+
+}
+
+/* ===========================
+   File Input
+=========================== */
+
+.form-control{
+
+    border-radius:10px;
+
+    border:2px solid #dee2e6;
+
+}
+
+.form-control:focus{
+
+    border-color:#F77F00;
+
+    box-shadow:0 0 0 .2rem rgba(247,127,0,.2);
+
+}
+
+/* ===========================
+   Animations
+=========================== */
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+@keyframes float{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-15px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+@keyframes slideToast {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateX(100px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateX(0);
+
+    }
+
+}
+
+/* ===========================
+   Responsive
+=========================== */
+
+@media(max-width:768px){
+
+    .hero-section{
+
+        text-align:center;
+
+    }
+
+    .hero-section h1{
+
+        font-size:36px;
+
+    }
+
+    .hero-icon-circle{
+
+        width:120px;
+
+        height:120px;
+
+        margin-top:30px;
+
+    }
+
+    .hero-icon-circle i{
+
+        font-size:50px;
+
+    }
+
+    .upload-card,
+
+    .preview-card{
+
+        padding:25px;
+
+    }
+
+    .upload-area{
+
+        padding:35px 15px;
+
+    }
+
+    .upload-icon{
+
+        font-size:55px;
+
+    }
+
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 991px) {
+
+    .expense-header {
+
+        padding: 60px 20px;
+
+    }
+
+    .expense-header h1 {
+
+        font-size: 42px;
+
+    }
+
+    .expense-section {
+
+        padding: 40px 20px;
+
+    }
+
+    .expense-card,
+    .upload-card,
+    .preview-card,
+    .recent-card {
+
+        width: 100%;
+
+    }
+
+
+    .card-heading {
+
+        gap: 20px;
+
+    }
+
+
+    .form-actions {
+
+        flex-wrap: wrap;
+
+        gap: 12px;
+
+    }
+
+
+    .reset-btn,
+    .save-btn {
+
+        min-width: 150px;
+
+    }
+
+
+    .upload-area {
+
+        padding: 40px 25px;
+
+    }
+
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 576px) {
+
+    .expense-header {
+
+        padding: 45px 15px;
+
+        text-align: center;
+
+    }
+
+
+    .expense-header h1 {
+
+        font-size: 30px;
+
+    }
+
+
+    .expense-header p {
+
+        font-size: 14px;
+
+        line-height: 1.6;
+
+    }
+
+
+    .page-tag {
+
+        font-size: 12px;
+
+    }
+
+
+    .expense-section {
+
+        padding: 30px 15px;
+
+    }
+
+
+    /* Add Expense / CSV selection */
+
+    .select-btn {
+
+        width: 100%;
+
+        margin: 8px 0 !important;
+
+    }
+
+
+    /* Main card */
+
+    .expense-card {
+
+        padding: 22px 18px;
+
+        border-radius: 20px;
+
+    }
+
+
+    .card-heading {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 15px;
+
+    }
+
+
+    .card-heading h2 {
+
+        font-size: 24px;
+
+    }
+
+
+    .card-heading p {
+
+        font-size: 13px;
+
+    }
+
+
+    .heading-icon {
+
+        align-self: center;
+
+    }
+
+
+    /* Form */
+
+    .form-label {
+
+        font-size: 14px;
+
+    }
+
+
+    .form-control,
+    .form-select {
+
+        width: 100%;
+
+        min-height: 45px;
+
+        font-size: 14px;
+
+    }
+
+
+    textarea.form-control {
+
+        min-height: 100px;
+
+    }
+
+
+    .input-group-custom {
+
+        width: 100%;
+
+    }
+
+
+    .category-wrapper {
+
+        width: 100%;
+
+    }
+
+
+    .add-category-btn {
+
+        min-width: 45px;
+
+        height: 45px;
+
+    }
+
+
+    /* Form buttons */
+
+    .form-actions {
+
+        display: flex;
+
+        flex-direction: column;
+
+        width: 100%;
+
+        gap: 12px;
+
+        margin-top: 25px;
+
+    }
+
+
+    .form-actions button {
+
+        width: 100%;
+
+        margin: 0 !important;
+
+    }
+
+
+    /* Upload */
+
+    .upload-card {
+
+        padding: 15px;
+
+    }
+
+
+    .upload-area {
+
+        padding: 35px 18px;
+
+    }
+
+
+    .upload-icon {
+
+        font-size: 45px;
+
+    }
+
+
+    .upload-area h3 {
+
+        font-size: 21px;
+
+    }
+
+
+    .upload-area p {
+
+        font-size: 13px;
+
+    }
+
+
+    .upload-area input[type="file"] {
+
+        font-size: 13px;
+
+    }
+
+
+    /* Preview */
+
+    .preview-card {
+
+        padding: 18px 15px;
+
+        border-radius: 18px;
+
+    }
+
+
+    .preview-card h3 {
+
+        font-size: 22px;
+
+    }
+
+    .preview-card .table-responsive {
+
+        overflow-x: auto;
+
+        -webkit-overflow-scrolling: touch;
+
+    }
+
+
+    .preview-card table {
+
+        min-width: 750px;
+
+        white-space: nowrap;
+
+    }
+
+
+    .preview-card th,
+    .preview-card td {
+
+        padding: 10px 12px;
+
+        font-size: 13px;
+
+    }
+
+    .preview-card .text-end {
+
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 10px;
+
+        width: 100%;
+
+    }
+
+
+    .preview-card .text-end button {
+
+        width: 100%;
+
+        margin: 0 !important;
+
+    }
+
+
+    /* Recent */
+
+    .recent-section {
+
+        padding: 35px 15px;
+
+    }
+
+
+    .recent-card {
+
+        padding: 18px 15px;
+
+        border-radius: 18px;
+
+    }
+
+
+    .recent-heading h2 {
+
+        font-size: 23px;
+
+    }
+
+
+    .recent-heading p {
+
+        font-size: 13px;
+
+    }
+
+    .recent-card .table-responsive {
+
+        overflow-x: auto;
+
+        -webkit-overflow-scrolling: touch;
+
+    }
+
+
+    .recent-card .expense-table {
+
+        min-width: 700px;
+
+        white-space: nowrap;
+
+    }
+
+
+    .recent-card .expense-table th,
+    .recent-card .expense-table td {
+
+        padding: 10px 12px;
+
+        font-size: 13px;
+
+    }
+
+
+    .delete-btn {
+
+        width: 38px;
+
+        height: 38px;
+
+    }
+
+    /* Pagination */
+
+    app-pagination {
+
+        display: flex;
+
+        justify-content: center;
+
+        width: 100%;
+
+        overflow-x: auto;
+
+        padding: 5px 0;
+
+    }
+
+    /* Modal */
+
+    .category-modal-overlay {
+
+        padding: 15px;
+
+    }
+
+
+    .category-modal {
+
+        width: 100%;
+
+        max-width: 420px;
+
+        padding: 25px 20px;
+
+        border-radius: 20px;
+
+    }
+
+
+    .category-modal h3 {
+
+        font-size: 23px;
+
+    }
+
+
+    .category-modal p {
+
+        font-size: 13px;
+
+        line-height: 1.6;
+
+    }
+
+
+    .category-modal input {
+
+        width: 100%;
+
+        height: 45px;
+
+    }
+
+
+    .modal-actions {
+
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 10px;
+
+        margin-top: 20px;
+
+    }
+
+
+    .modal-actions button {
+
+        width: 100%;
+
+    }
+
+    /* Success Toast */
+
+    .success-toast {
+
+        width: calc(100% - 30px);
+
+        max-width: 400px;
+
+        left: 50%;
+
+        right: auto;
+
+        transform: translateX(-50%);
+
+        bottom: 20px;
+
+    }
+
+}
+
+/* =========================================
+   VERY SMALL MOBILE
+========================================= */
+
+@media (max-width: 380px) {
+
+    .expense-header h1 {
+
+        font-size: 27px;
+
+    }
+
+
+    .expense-card {
+
+        padding: 18px 14px;
+
+    }
+
+
+    .upload-area {
+
+        padding: 30px 12px;
+
+    }
+
+
+    .preview-card,
+    .recent-card {
+
+        padding: 15px 12px;
+
+    }
+
+
+    .preview-card h3,
+    .recent-heading h2 {
+
+        font-size: 20px;
+
+    }
+
+}

@@ -1,0 +1,1099 @@
+.hero-section{
+
+    background:#003049;
+
+    color:white;
+
+    padding:110px 0;
+
+}
+
+.hero-icon{
+
+    font-size:120px;
+
+    color:#F77F00;
+
+}
+
+.summary-card{
+
+    background:#fff;
+
+    border-radius:20px;
+
+    padding:25px;
+
+    text-align:center;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+}
+
+.summary-card i{
+
+    font-size:40px;
+
+    color:#F77F00;
+
+    margin-bottom:15px;
+
+}
+
+.add-btn{
+
+    background:#F77F00;
+
+    color:white;
+
+    border:none;
+
+    padding:12px 22px;
+
+    border-radius:12px;
+
+}
+
+.add-btn:hover{
+
+    background:#d96f00;
+
+}
+
+.recurring-card{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:25px;
+
+    margin-bottom:20px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+    transition:.3s;
+
+}
+
+.recurring-card:hover{
+
+    transform:translateY(-5px);
+
+}
+
+.amount{
+
+    font-size:28px;
+
+    font-weight:700;
+
+    color:#003049;
+
+}
+
+.status{
+
+    color:#00BF7C;
+
+    font-weight:700;
+
+}
+
+.empty-card{
+
+    padding:60px;
+
+    border-radius:20px;
+
+    text-align:center;
+
+    background:white;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+}
+
+.empty-card i{
+
+    font-size:70px;
+
+    color:#F77F00;
+
+    margin-bottom:20px;
+
+}
+
+/* ================= Overlay ================= */
+
+.modal-overlay{
+
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(0, 48, 73, .45);
+
+    backdrop-filter: blur(10px);
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    z-index: 9999;
+
+    animation: fadeIn .3s ease;
+
+}
+
+/* ================= Modal ================= */
+
+.custom-modal{
+
+    width: 760px;
+
+    max-width: 95%;
+
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    background: rgba(255,255,255,.92);
+
+    backdrop-filter: blur(18px);
+
+    border-radius: 28px;
+
+    border: 1px solid rgba(255,255,255,.45);
+
+    box-shadow: 0 25px 60px rgba(0,48,73,.25);
+
+    animation: popup .35s ease;
+
+}
+
+/* ================= Header ================= */
+
+.modal-header{
+
+    background: linear-gradient(135deg,#003049,#004d73);
+
+    color: white;
+
+    padding: 15px 30px;
+
+    border-radius: 28px 28px 0 0;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+.modal-header h3{
+
+    margin:0;
+
+    font-size:1.6rem;
+
+    font-weight:700;
+
+}
+
+.close-btn{
+
+    width:42px;
+
+    height:42px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.15);
+
+    color:white;
+
+    font-size:20px;
+
+    transition:.3s;
+
+}
+
+.close-btn:hover{
+
+    background:#F77F00;
+
+    transform:rotate(90deg);
+
+}
+
+/* ================= Body ================= */
+
+.modal-body{
+
+    padding:15px 30px;
+
+}
+
+/* ================= Inputs ================= */
+
+.modal-body label{
+
+    color:#003049;
+
+    font-weight:600;
+
+    margin-bottom:8px;
+
+}
+
+.form-control,
+.form-select{
+
+    height:50px;
+
+    border-radius:14px;
+
+    border:2px solid #e8eef3;
+
+    background:#fff;
+
+    transition:.3s;
+
+}
+
+textarea.form-control{
+
+    min-height:110px;
+
+    resize:none;
+
+}
+
+.form-control:focus,
+.form-select:focus{
+
+    border-color:#F77F00;
+
+    box-shadow:0 0 0 .2rem rgba(247,127,0,.18);
+
+}
+
+/* ================= Footer ================= */
+
+.modal-footer{
+
+    padding:15px 30px;
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    gap:15px;
+
+    border-top:1px solid #eee;
+
+}
+
+/* Cancel */
+
+.btn-cancel{
+
+    background:#f1f3f5;
+
+    color:#003049;
+
+    border:none;
+
+    padding:12px 28px;
+
+    border-radius:12px;
+
+    font-weight:600;
+
+}
+
+.btn-cancel:hover{
+
+    background:#dee2e6;
+
+}
+
+/* Save */
+
+.btn-save{
+
+    background:linear-gradient(135deg,#F77F00,#ff9a1f);
+
+    color:white;
+
+    border:none;
+
+    padding:12px 32px;
+
+    border-radius:12px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.btn-save:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:0 12px 24px rgba(247,127,0,.35);
+
+}
+
+/* Play-Pause */
+
+.btn-play{
+    background: #48B256;
+    margin-left: 8px;
+    color: #FFFFFF;
+}
+
+.btn-pause{
+    background: #F0901F;
+    margin-left: 8px;
+    color: #FFFFFF;
+}
+
+.btn-play:hover{
+    background: #28A638;
+}
+
+.btn-pause::hover{
+    background: #E6810D;
+}
+
+.status{
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-weight: 600;
+}
+
+.active{
+    color: #00BF7C;
+}
+
+.paused{
+    color: #dc3545;
+}
+
+/* Overdue */
+
+.overdue{
+
+background:#dc3545;
+
+color:white;
+
+}
+
+.due{
+
+background:#F77F00;
+
+color:white;
+
+}
+
+.soon{
+
+background:#ffc107;
+
+color:black;
+
+}
+
+.upcoming{
+
+background:#00BF7C;
+
+color:white;
+
+}
+
+.status{
+
+padding:8px 14px;
+
+border-radius:20px;
+
+font-size:13px;
+
+font-weight:600;
+
+display:inline-block;
+
+}
+
+/* Notification */
+
+.notification-card{
+
+    background:white;
+
+    border-radius:18px;
+
+    margin-left: 120px;
+
+    margin-right: 120px;
+
+    padding:20px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+}
+
+.notification-item{
+
+    padding:10px 15px;
+
+    margin-top:10px;
+
+    border-radius:10px;
+
+    font-weight:500;
+
+}
+
+.overdue{
+
+    background:#f8d7da;
+
+    color:#842029;
+
+}
+
+.today{
+
+    background:#fff3cd;
+
+    color:#664d03;
+
+}
+
+.soon{
+
+    background:#cff4fc;
+
+    color:#055160;
+
+}
+
+/* ================= Scrollbar ================= */
+
+.custom-modal::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+.custom-modal::-webkit-scrollbar-thumb{
+
+    background:#F77F00;
+
+    border-radius:20px;
+
+}
+
+/* ================= Animations ================= */
+
+@keyframes popup{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(40px) scale(.92);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0) scale(1);
+
+    }
+
+}
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+    }
+
+    to{
+
+        opacity:1;
+
+    }
+
+}
+
+@keyframes slideToast {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateX(100px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateX(0);
+
+    }
+
+}
+
+/* Pop Uo\p Toast */
+.success-toast {
+
+    position: fixed;
+
+    right: 30px;
+
+    bottom: 30px;
+
+    background: #003049;
+
+    color: white;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 18px 25px;
+
+    border-radius: 15px;
+
+    box-shadow: 0 15px 35px rgba(0,0,0,.25);
+
+    z-index: 10000;
+
+    animation: slideToast .5s ease;
+
+}
+
+.success-toast p {
+
+    margin: 3px 0 0;
+
+    font-size: 13px;
+
+}
+
+.success-icon {
+
+    width: 40px;
+
+    height: 40px;
+
+    background: #00BF7C;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 991px) {
+
+    .hero-section {
+        padding: 60px 20px;
+        text-align: center;
+    }
+
+    .hero-section h1 {
+        font-size: 42px;
+    }
+
+    .hero-section p {
+        font-size: 16px;
+    }
+
+    .hero-icon {
+        margin-top: 30px;
+        font-size: 70px;
+    }
+
+    .summary-card {
+        min-height: 140px;
+    }
+
+    .recurring-card {
+        padding: 25px;
+    }
+
+    .modal-overlay {
+        padding: 20px;
+    }
+
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 576px) {
+
+    /* HERO */
+
+    .hero-section {
+        padding: 45px 15px;
+        text-align: center;
+    }
+
+    .hero-section h1 {
+        font-size: 30px;
+        line-height: 1.2;
+    }
+
+    .hero-section p {
+        font-size: 14px;
+        line-height: 1.7;
+    }
+
+    .hero-icon {
+        margin-top: 25px;
+        font-size: 55px;
+    }
+
+
+    /* MAIN CONTENT */
+
+    .container.py-5 {
+        padding-top: 30px !important;
+        padding-bottom: 30px !important;
+    }
+
+
+    /* SUMMARY CARDS */
+
+    .summary-card {
+        width: 100%;
+        min-height: 120px;
+        padding: 20px;
+        border-radius: 18px;
+    }
+
+    .summary-card h5 {
+        font-size: 14px;
+    }
+
+    .summary-card h3 {
+        font-size: 27px;
+    }
+
+
+    /* SEARCH */
+
+    .row.mb-4 {
+        gap: 12px;
+    }
+
+    .row.mb-4 .col-md-6 {
+        width: 100%;
+    }
+
+    .row.mb-4 .form-control,
+    .row.mb-4 .form-select {
+        width: 100%;
+        min-height: 45px;
+    }
+
+
+    /* PAGE HEADER */
+
+    .d-flex.justify-content-between.align-items-center.mb-4 {
+        flex-direction: column;
+        align-items: stretch !important;
+        gap: 15px;
+    }
+
+    .d-flex.justify-content-between.align-items-center.mb-4 h2 {
+        font-size: 24px;
+    }
+
+    .add-btn {
+        width: 100%;
+    }
+
+
+    /* NOTIFICATIONS */
+
+    .notification-card {
+        padding: 20px 15px;
+        border-radius: 18px;
+    }
+
+    .notification-item {
+        font-size: 13px;
+        line-height: 1.5;
+    }
+
+
+    /* RECURRING CARD */
+
+    .recurring-card {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px 17px;
+        border-radius: 18px;
+    }
+
+    .recurring-card > div {
+        width: 100%;
+    }
+
+    .recurring-card h4 {
+        font-size: 21px;
+    }
+
+    .recurring-card p {
+        font-size: 14px;
+    }
+
+    .recurring-card .amount {
+        font-size: 20px;
+    }
+
+
+    /* RIGHT SIDE */
+
+    .recurring-card .text-end {
+        text-align: left !important;
+    }
+
+    .recurring-card .status {
+        display: inline-block;
+        margin-right: 5px;
+        margin-bottom: 8px;
+    }
+
+
+    /* ACTION BUTTONS */
+
+    .recurring-card .text-end button {
+        margin: 5px 4px 0 0 !important;
+    }
+
+    .modal-overlay {
+        padding: 15px;
+        overflow-y: auto;
+        align-items: flex-start;
+    }
+
+    .custom-modal {
+        width: 100%;
+        max-width: 430px;
+        max-height: 92vh;
+        overflow-y: auto;
+        margin: 20px auto;
+        border-radius: 20px;
+    }
+
+    .modal-header {
+        padding: 20px;
+    }
+
+    .modal-header h3 {
+        font-size: 21px;
+    }
+
+    .modal-body {
+        padding: 20px;
+    }
+
+    .modal-body .form-control,
+    .modal-body .form-select {
+        width: 100%;
+        min-height: 45px;
+        font-size: 14px;
+    }
+
+    .modal-body textarea {
+        min-height: 90px;
+    }
+
+    .modal-footer {
+        padding: 15px 20px;
+
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .modal-footer button {
+        width: 100%;
+        min-height: 45px;
+    }
+
+    app-pagination {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        overflow-x: auto;
+        padding: 10px 0;
+    }
+
+}
+
+/* =========================================
+   VERY SMALL MOBILE
+========================================= */
+
+@media (max-width: 380px) {
+
+    .custom-modal {
+        margin: 10px auto;
+        max-height: 94vh;
+    }
+
+    .modal-header {
+        padding: 17px;
+    }
+
+    .modal-body {
+        padding: 17px;
+    }
+
+    .modal-header h3 {
+        font-size: 19px;
+    }
+
+    .recurring-card .text-end button {
+        width: 42px;
+        height: 42px;
+        padding: 0;
+    }
+
+    /* HERO */
+
+    .hero-section {
+        padding: 35px 12px;
+    }
+
+    .hero-section h1 {
+        font-size: 26px;
+        line-height: 1.2;
+    }
+
+    .hero-section p {
+        font-size: 13px;
+        line-height: 1.6;
+    }
+
+    .hero-icon {
+        font-size: 48px;
+        margin-top: 20px;
+    }
+
+
+    /* MAIN CONTAINER */
+
+    .container.py-5 {
+        padding-left: 12px !important;
+        padding-right: 12px !important;
+    }
+
+
+    /* SUMMARY CARDS */
+
+    .summary-card {
+        min-height: 110px;
+        padding: 16px 14px;
+        border-radius: 16px;
+    }
+
+    .summary-card i {
+        font-size: 18px;
+    }
+
+    .summary-card h5 {
+        font-size: 13px;
+    }
+
+    .summary-card h3 {
+        font-size: 23px;
+    }
+
+
+    /* SEARCH */
+
+    .row.mb-4 {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .row.mb-4 .form-control,
+    .row.mb-4 .form-select {
+        min-height: 43px;
+        font-size: 13px;
+    }
+
+
+    /* PAGE TITLE */
+
+    .d-flex.justify-content-between.align-items-center.mb-4 h2 {
+        font-size: 21px;
+    }
+
+    .add-btn {
+        width: 100%;
+        min-height: 43px;
+        font-size: 13px;
+    }
+
+
+    /* NOTIFICATIONS */
+
+    .notification-card {
+        padding: 16px 13px;
+    }
+
+    .notification-card h5 {
+        font-size: 16px;
+    }
+
+    .notification-item {
+        font-size: 12px;
+    }
+
+
+    /* RECURRING CARD */
+
+    .recurring-card {
+        padding: 17px 14px;
+        gap: 16px;
+        border-radius: 16px;
+    }
+
+    .recurring-card h4 {
+        font-size: 18px;
+    }
+
+    .recurring-card p {
+        font-size: 12px;
+    }
+
+    .recurring-card .amount {
+        font-size: 19px;
+    }
+
+
+    /* STATUS */
+
+    .recurring-card .status {
+        font-size: 11px;
+        padding: 5px 8px;
+    }
+
+
+    /* ACTION BUTTONS */
+
+    .recurring-card .text-end button {
+        width: 40px;
+        height: 40px;
+        padding: 0;
+        margin: 4px 3px 0 0 !important;
+    }
+
+
+    .recurring-card .text-end button i {
+        font-size: 13px;
+    }
+
+
+    /* MODAL */
+
+    .modal-overlay {
+        padding: 10px;
+    }
+
+    .custom-modal {
+        width: 100%;
+        max-height: 95vh;
+        margin: 5px auto;
+        border-radius: 17px;
+    }
+
+    .modal-header {
+        padding: 15px;
+    }
+
+    .modal-header h3 {
+        font-size: 18px;
+    }
+
+    .modal-body {
+        padding: 15px;
+    }
+
+    .modal-body label {
+        font-size: 13px;
+    }
+
+    .modal-body .form-control,
+    .modal-body .form-select {
+        min-height: 43px;
+        font-size: 13px;
+    }
+
+    .modal-body textarea {
+        min-height: 80px;
+    }
+
+    .modal-footer {
+        padding: 12px 15px;
+    }
+
+    .modal-footer button {
+        min-height: 43px;
+        font-size: 13px;
+    }
+
+
+    /* TOAST */
+
+    .success-toast {
+        width: calc(100% - 20px);
+        bottom: 10px;
+        padding: 12px;
+    }
+}

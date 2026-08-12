@@ -1,0 +1,1030 @@
+<app-navbar></app-navbar>
+<!-- USER MANAGEMENT -->
+@if (value === '{"id":"6a60b4894330ea70f06199a1","fullName":"Admin","username":"admin","email":"admin@gmail.com","role":"admin","avatar":"MProfile5.png","heroColor":"#003049"}') {
+    <div class="users-management-page">
+
+    <div class="container">
+
+        <!-- PAGE HEADER -->
+
+        <div class="page-header">
+
+            <div>
+
+                <h2 class="page-title">
+
+                    <i class="fa-solid fa-users me-3"></i>
+
+                    User Management
+
+                </h2>
+
+                <p class="page-subtitle">
+
+                    Manage all registered users and monitor their expense activities.
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- DASHBOARD SUMMARY -->
+
+        <div class="row g-4 mb-5">
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="dashboard-card">
+
+                    <div class="dashboard-icon gray">
+
+                        <i class="fa-solid fa-users"></i>
+
+                    </div>
+
+                    <div>
+
+                        <small>Total Users</small>
+
+                        <h3>{{displayTotalUsers-1}}</h3>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="dashboard-card">
+
+                    <div class="dashboard-icon yellow">
+
+                        <i class="fa-solid fa-wallet"></i>
+
+                    </div>
+
+                    <div>
+
+                        <small>Total Transactions</small>
+
+                        <h3>
+
+                            {{displayTotalTransactionns}}
+
+                        </h3>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="dashboard-card">
+
+                    <div class="dashboard-icon orange">
+
+                        <i class="fa-solid fa-piggy-bank"></i>
+
+                    </div>
+
+                    <div>
+
+                        <small>Total Expense</small>
+
+                        <h3>
+
+                            ₹{{displayTotalExpense}}
+
+                        </h3>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="dashboard-card">
+
+                    <div class="dashboard-icon red">
+
+                        <i class="fa-solid fa-chart-line"></i>
+
+                    </div>
+
+                    <div>
+
+                        <small>Average/User</small>
+
+                        <h3>
+
+                            ₹{{displayAverageExpense}}
+
+                        </h3>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="row g-4 mb-5">
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="dashboard-card">
+
+                    <div class="dashboard-icon green">
+
+                        <i class="fa-solid fa-hand-holding-dollar"></i>
+
+                    </div>
+
+                    <div>
+
+                        <small>Total Budgets</small>
+
+                        <h3>{{displayTotalBudgets}}</h3>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="dashboard-card">
+
+                    <div class="dashboard-icon cyan">
+
+                        <i class="fa-solid fa-coins"></i>
+
+                    </div>
+
+                    <div>
+
+                        <small>Total Recurring</small>
+
+                        <h3>
+
+                            {{displayTotalRecurring}}
+
+                        </h3>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="dashboard-card">
+
+                    <div class="dashboard-icon blue">
+
+                        <i class="fa-solid fa-layer-group"></i>
+
+                    </div>
+
+                    <div>
+
+                        <small>Total Categories</small>
+
+                        <h3>
+
+                            {{displayTotalCategories}}
+
+                        </h3>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="dashboard-card">
+
+                    <div class="dashboard-icon violet">
+
+                        <i class="fa-solid fa-indian-rupee-sign"></i>
+
+                    </div>
+
+                    <div>
+
+                        <small>Monthly Expense</small>
+
+                        <h3>
+
+                            ₹{{displayThisMonthExpense}}
+
+                        </h3>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="row mt-5">
+
+            <div class="col-lg-6">
+            
+                <div class="report-card">
+                
+                    <h4>
+                    
+                        Expense Categories
+                    
+                    </h4>
+                
+                    <canvas
+                
+                        baseChart
+                
+                        [data]="pieChartData"
+                
+                        [type]="pieChartType"
+                
+                        [options]="pieChartOptions">
+                
+                    </canvas>
+                
+                </div>
+            
+            </div>
+        
+            <div class="col-lg-6">
+            
+                <div class="report-card">
+                
+                    <h4>
+                    
+                        Monthly Expenses
+                    
+                    </h4>
+                
+                    <canvas
+                
+                        baseChart
+                
+                        [data]="barChartData"
+                
+                        [type]="barChartType"
+                
+                        [options]="barChartOptions">
+                
+                    </canvas>
+                
+                </div>
+            
+            </div>
+        
+        </div>
+        
+        <div class="row mt-4">
+        
+            <div class="col-lg-12">
+            
+                <div class="report-card">
+                
+                    <h4>
+                    
+                        User Registrations
+                    
+                    </h4>
+                
+                    <canvas
+                
+                        baseChart
+                
+                        [data]="lineChartData"
+                
+                        [type]="lineChartType"
+                
+                        [options]="lineChartOptions">
+                
+                    </canvas>
+                
+                </div>
+            
+            </div>
+        
+        </div>
+
+        <!-- SEARCH -->
+
+        <div class="search-section">
+
+            <div class="search-box">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <input
+
+                    type="text"
+
+                    class="form-control"
+
+                    placeholder="Search users by name, username or email...">
+
+            </div>
+
+        </div>
+
+        <!-- USERS -->
+
+        @for(user of paginatedUsers; track user._id){
+
+        <div class="user-card">
+
+            <!-- CARD HEADER -->
+
+            @if (user.role === 'admin') {
+
+            }
+            @else {
+                <div class="card-header-custom">
+
+                    <div class="user-left">
+
+                        <img
+
+                            [src]="user.avatar"
+
+                            class="avatar"
+
+                            alt="{{user.fullName}}">
+
+                        <div>
+
+                            <h4>
+
+                                {{user.fullName}}
+
+                            </h4>
+
+                            <p class="email">
+
+                                {{user.email}}
+
+                            </p>
+
+                            <div class="quick-info">
+
+                                <span>
+
+                                    <i class="fa-solid fa-at"></i>
+
+                                    {{user.username}}
+
+                                </span>
+
+                                <span>
+
+                                    <i class="fa-solid fa-briefcase"></i>
+
+                                    {{user.occupation}}
+
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="user-actions">
+
+                        <button
+
+                            class="btn btn-details"
+
+                            (click)="toggleCard(user._id)">
+
+                            <i
+
+                                class="fa-solid"
+
+                                [class.fa-eye]="!isExpanded(user._id)"
+
+                                [class.fa-eye-slash]="isExpanded(user._id)">
+
+                            </i>
+
+                            {{isExpanded(user._id)
+
+                            ? 'Hide Details'
+
+                            : 'View Details'}}
+
+                        </button>
+
+                        <button
+
+                            class="btn btn-delete"
+
+                            (click)="deleteUser(user._id, user.username)">
+
+                            <i class="fa-solid fa-trash"></i>
+
+                            Delete
+
+                        </button>
+
+                    </div>
+
+                </div>
+            }
+
+            <!-- EXPANDABLE AREA -->
+
+            <div
+
+                class="expand-area"
+
+                [class.expanded]="isExpanded(user._id)">
+
+                <div class="expand-content">
+
+                    <div class="row g-4">
+
+                        <!-- USER PROFILE -->
+
+                        <div class="col-lg-5">
+
+                            <div class="info-card">
+
+                                <h5 class="section-title">
+
+                                    <i class="fa-solid fa-user me-2"></i>
+
+                                    User Profile
+
+                                </h5>
+
+                                <div class="profile-info">
+
+                                    <div class="info-item">
+
+                                        <div class="info-icon">
+
+                                            <i class="fa-solid fa-user"></i>
+
+                                        </div>
+
+                                        <div>
+
+                                            <small>Full Name</small>
+
+                                            <h6>{{user.fullName}}</h6>
+
+                                        </div>
+
+                                    </div>
+
+                                    <div class="info-item">
+
+                                        <div class="info-icon">
+
+                                            <i class="fa-solid fa-at"></i>
+
+                                        </div>
+
+                                        <div>
+
+                                            <small>Username</small>
+
+                                            <h6>{{user.username}}</h6>
+
+                                        </div>
+
+                                    </div>
+
+                                    <div class="info-item">
+
+                                        <div class="info-icon">
+
+                                            <i class="fa-solid fa-envelope"></i>
+
+                                        </div>
+
+                                        <div>
+
+                                            <small>Email</small>
+
+                                            <h6>{{user.email}}</h6>
+
+                                        </div>
+
+                                    </div>
+
+                                    <div class="info-item">
+
+                                        <div class="info-icon">
+
+                                            <i class="fa-solid fa-phone"></i>
+
+                                        </div>
+
+                                        <div>
+
+                                            <small>Phone</small>
+
+                                            <h6>{{user.phone}}</h6>
+
+                                        </div>
+
+                                    </div>
+
+                                    <div class="info-item">
+
+                                        <div class="info-icon">
+
+                                            <i class="fa-solid fa-briefcase"></i>
+
+                                        </div>
+
+                                        <div>
+
+                                            <small>Occupation</small>
+
+                                            <h6>{{user.occupation}}</h6>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <!-- EXPENSE SUMMARY -->
+
+                        <div class="col-lg-7">
+
+                            <div class="info-card">
+
+                                <h5 class="section-title">
+
+                                    <i class="fa-solid fa-wallet me-2"></i>
+
+                                    Expense Summary
+
+                                </h5>
+
+                                <div class="summary-grid">
+
+                                    <div class="summary-box">
+
+                                        <i class="fa-solid fa-money-bill-wave"></i>
+
+                                        <small>Total Expense</small>
+
+                                        <h4>
+
+                                            ₹{{user.summary.totalExpense}}
+
+                                        </h4>
+
+                                    </div>
+
+                                    <div class="summary-box">
+
+                                        <i class="fa-solid fa-receipt"></i>
+
+                                        <small>Transactions</small>
+
+                                        <h4>
+
+                                            {{user.summary.transactions}}
+
+                                        </h4>
+
+                                    </div>
+
+                                    <div class="summary-box">
+
+                                        <i class="fa-solid fa-chart-pie"></i>
+
+                                        <small>Highest Category</small>
+
+                                        <h4>
+
+                                            {{user.summary.highestCategory}}
+
+                                        </h4>
+
+                                    </div>
+
+                                    <div class="summary-box">
+
+                                        <i class="fa-solid fa-arrow-trend-up"></i>
+
+                                        <small>Largest Expense</small>
+
+                                        <h4>
+
+                                            ₹{{user.summary.largestExpense}}
+
+                                        </h4>
+
+                                    </div>
+
+                                    <div class="summary-box">
+
+                                        <i class="fa-solid fa-calculator"></i>
+
+                                        <small>Average Expense</small>
+
+                                        <h4>
+
+                                            ₹{{user.summary.averageExpense}}
+
+                                        </h4>
+
+                                    </div>
+
+                                    <div class="summary-box">
+
+                                        <i class="fa-solid fa-calendar-days"></i>
+
+                                        <small>This Month</small>
+
+                                        <h4>
+
+                                            ₹{{user.summary.currentMonth}}
+
+                                        </h4>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- RECENT EXPENSES -->
+
+                    <div class="info-card mt-4">
+
+                        <div class="recent-header">
+
+                            <h5 class="section-title mb-0">
+
+                                <i class="fa-solid fa-clock-rotate-left me-2"></i>
+
+                                Recent Expenses
+
+                            </h5>
+
+                            <span class="expense-count">
+
+                                {{user.recentExpenses.length}} Recent
+
+                            </span>
+
+                        </div>
+
+                        <div class="table-responsive">
+
+                            <table class="table table-hover align-middle">
+
+                                <thead>
+
+                                    <tr>
+
+                                        <th>
+
+                                            Category
+
+                                        </th>
+
+                                        <th>
+
+                                            Amount
+
+                                        </th>
+
+                                        <th>
+
+                                            Date
+
+                                        </th>
+
+                                    </tr>
+
+                                </thead>
+
+                                <tbody>
+
+                                    @for(expense of user.recentExpenses; track expense){
+
+                                    <tr>
+
+                                        <td>
+
+                                            <span class="category-badge">
+
+                                                {{expense.category}}
+
+                                            </span>
+
+                                        </td>
+
+                                        <td class="fw-semibold">
+
+                                            ₹{{expense.amount}}
+
+                                        </td>
+
+                                        <td>
+
+                                            {{expense.date}}
+
+                                        </td>
+
+                                    </tr>
+
+                                    }
+
+                                </tbody>
+
+                            </table>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    }
+
+    </div>
+
+    <app-pagination
+
+    [currentPage]="currentPage"
+    
+    [totalPages]="totalPages"
+    
+    (pageChange)="onPageChange($event)">
+    
+    </app-pagination>
+
+</div>
+
+} @else {
+
+<!-- HERO SECTION -->
+<div class="hero-section">
+
+    <div class="container">
+
+        <div class="row align-items-center">
+
+            <div class="col-lg-8">
+
+                <h1>My Profile</h1>
+
+                <p>
+                    View and manage your personal information securely.
+                </p>
+
+                <div class="hero-line"></div>
+
+            </div>
+
+            <div class="col-lg-4 text-center">
+
+                <div
+                    class="hero-icon-circle"
+                    [style.background]="profile.heroColor">
+
+                    <i class="fa-solid fa-user"></i>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- PROFILE CARD -->
+<div class="container mb-5">
+
+    <div class="profile-card">
+
+        <!-- Profile Image -->
+
+        <div class="text-center mb-4">
+
+            <img
+            [src]="profile.avatar"
+            class="profile-img"
+            alt="Profile"
+            [style.borderColor]="profile.heroColor">
+
+            <h3 class="mt-3">{{ profile.fullName }}</h3>
+
+            <p class="text-muted">
+                {{ profile.occupation }}
+            </p>
+
+        </div>
+
+        <!-- Avatar Selection -->
+
+        @if(editMode){
+
+        <div class="mb-4">
+
+            <h5 class="mb-3">Choose Avatar</h5>
+
+            <div class="avatar-list">
+
+                @for(avatar of avatars; track avatar){
+
+                    <img
+                        [src]="avatar"
+                        class="avatar-option"
+                        (click)="selectAvatar(avatar)"
+                        [class.active-avatar]="profile.avatar===avatar">
+
+                }
+
+            </div>
+
+        </div>
+
+        }
+
+        <!-- Hero Color Selection -->
+
+        @if(editMode){
+
+        <div class="mb-5">
+
+            <h5 class="mb-3">Hero Icon Background</h5>
+
+            <div class="color-list">
+
+                @for(color of heroColors; track color){
+
+                    <div
+
+                        class="color-circle"
+
+                        [style.background]="color"
+
+                        (click)="changeHeroColor(color)"
+
+                        [class.active-color]="profile.heroColor===color">
+
+                    </div>
+
+                }
+
+            </div>
+
+        </div>
+
+        }
+
+        <!-- Profile Form -->
+
+        <div class="row g-4">
+
+            <div class="col-md-6">
+
+                <label>Full Name</label>
+
+                <input
+                    type="text"
+                    class="form-control"
+                    [(ngModel)]="profile.fullName"
+                    [disabled]="!editMode">
+
+            </div>
+
+            <div class="col-md-6">
+
+                <label>Username</label>
+
+                <input
+                    type="text"
+                    class="form-control"
+                    [(ngModel)]="profile.username"
+                    [disabled]="!editMode">
+
+            </div>
+
+            <div class="col-md-6">
+
+                <label>Email</label>
+
+                <input
+                    type="email"
+                    class="form-control"
+                    [(ngModel)]="profile.email"
+                    [disabled]="!editMode">
+
+            </div>
+
+            <div class="col-md-6">
+
+                <label>Phone Number</label>
+
+                <input
+                    type="text"
+                    class="form-control"
+                    [(ngModel)]="profile.phone"
+                    [disabled]="!editMode">
+
+            </div>
+
+            <div class="col-md-12">
+
+                <label>Occupation</label>
+
+                <input
+                    type="text"
+                    class="form-control"
+                    [(ngModel)]="profile.occupation"
+                    [disabled]="!editMode">
+
+            </div>
+
+        </div>
+
+        <!-- Buttons -->
+
+        <div class="text-end mt-5">
+
+            @if(!editMode){
+
+                <button
+                    class="btn btn-edit"
+                    (click)="editProfile()">
+
+                    <i class="fa-solid fa-pen me-2"></i>
+
+                    Edit Profile
+
+                </button>
+
+            } @else {
+
+                <button
+                    class="btn btn-secondary me-2"
+                    (click)="cancelEdit()">
+
+                    <i class="fa-solid fa-xmark me-2"></i>
+
+                    Cancel
+
+                </button>
+
+                <button
+                    class="btn btn-save"
+                    (click)="saveProfile()">
+
+                    <i class="fa-solid fa-floppy-disk me-2"></i>
+
+                    Save Changes
+
+                </button>
+
+            }
+
+        </div>
+
+    </div>
+
+</div>
+}

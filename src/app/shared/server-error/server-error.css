@@ -1,0 +1,290 @@
+/* =========================================
+   500 SERVER ERROR
+========================================= */
+
+.error-page {
+
+    min-height: 100vh;
+
+    width: 100%;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    padding: 40px 20px;
+
+    background: #003049;
+
+}
+
+
+.error-content {
+
+    width: 100%;
+
+    max-width: 650px;
+
+}
+
+
+.error-icon {
+
+    width: 90px;
+
+    height: 90px;
+
+    margin: 0 auto 25px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    color: #FFFFF4;
+
+}
+
+
+.error-icon i {
+
+    font-size: 38px;
+
+    color: #FFFFF4;
+
+}
+
+
+.error-content h1 {
+
+    font-size: 120px;
+
+    font-weight: 800;
+
+    line-height: 1;
+
+    margin: 0 0 10px;
+
+    color: #FFFFF4;
+
+}
+
+
+.error-content h2 {
+
+    font-size: 32px;
+
+    margin-bottom: 15px;
+
+    color: #FFFFF4;
+
+}
+
+
+.error-content p {
+
+    max-width: 500px;
+
+    margin: 0 auto 30px;
+
+    font-size: 16px;
+
+    line-height: 1.7;
+
+    color: #CD1C18;
+
+}
+
+
+.error-actions {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 12px;
+
+}
+
+
+.error-actions .btn {
+
+    min-width: 150px;
+
+    min-height: 45px;
+
+    transition: transform 0.25s ease;
+
+    color: #FFFFF4;
+
+}
+
+
+.error-actions .btn:hover {
+
+    transform: translateY(-3px);
+
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 991px) {
+
+    .error-content h1 {
+
+        font-size: 100px;
+
+    }
+
+    .error-content h2 {
+
+        font-size: 29px;
+
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 576px) {
+
+    .error-page {
+
+        padding: 30px 15px;
+
+    }
+
+
+    .error-icon {
+
+        width: 70px;
+
+        height: 70px;
+
+    }
+
+
+    .error-icon i {
+
+        font-size: 30px;
+
+    }
+
+
+    .error-content h1 {
+
+        font-size: 80px;
+
+    }
+
+
+    .error-content h2 {
+
+        font-size: 25px;
+
+    }
+
+
+    .error-content p {
+
+        font-size: 14px;
+
+        line-height: 1.7;
+
+    }
+
+
+    .error-actions {
+
+        flex-direction: column;
+
+        align-items: center;
+
+    }
+
+
+    .error-actions .btn {
+
+        width: 100%;
+
+        max-width: 260px;
+
+    }
+
+}
+
+
+/* =========================================
+   VERY SMALL PHONES
+========================================= */
+
+@media (max-width: 380px) {
+
+    .error-page {
+
+        padding: 25px 12px;
+
+    }
+
+
+    .error-icon {
+
+        width: 60px;
+
+        height: 60px;
+
+    }
+
+
+    .error-icon i {
+
+        font-size: 25px;
+
+    }
+
+
+    .error-content h1 {
+
+        font-size: 65px;
+
+    }
+
+
+    .error-content h2 {
+
+        font-size: 21px;
+
+    }
+
+
+    .error-content p {
+
+        font-size: 13px;
+
+    }
+
+
+    .error-actions .btn {
+
+        max-width: 220px;
+
+        min-height: 43px;
+
+        font-size: 13px;
+
+    }
+
+}

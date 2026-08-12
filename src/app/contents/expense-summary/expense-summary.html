@@ -1,0 +1,608 @@
+<app-navbar></app-navbar>
+<div class="summary-page">
+
+    <!-- ================= HEADER ================= -->
+    <section class="summary-header">
+
+        <div class="container">
+
+            <span class="page-tag">
+                Analytics & Reports
+            </span>
+
+            <h1>
+                Expense Summary
+            </h1>
+
+            <p>
+                Analyze your expenses, discover spending patterns and monitor your financial health.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FILTER ================= -->
+    <section class="filter-section">
+
+        <div class="container">
+
+            <div class="filter-card">
+
+                <div class="row g-3 align-items-end">
+
+                    <div class="col-lg-3">
+
+                        <label class="form-label">
+                            View
+                        </label>
+
+                        <select
+                            class="form-select"
+                            [(ngModel)]="selectedView"
+                            (change)="changeView()">
+
+                            <option value="all">
+                                All Time
+                            </option>
+
+                            <option value="month">
+                                Monthly
+                            </option>
+
+                            <option value="year">
+                                Yearly
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- MONTH -->
+
+                    @if(selectedView == 'month'){
+
+                    <div class="col-lg-3">
+
+                        <label class="form-label">
+
+                            Month
+
+                        </label>
+
+                        <select
+                            class="form-select"
+                            [(ngModel)]="selectedMonth">
+
+                            @for(month of months; track month){
+
+                            <option [value]="month">
+
+                                {{month}}
+
+                            </option>
+
+                            }
+
+                        </select>
+
+                    </div>
+
+                    }
+
+
+                    <!-- YEAR -->
+
+                    @if(selectedView != 'all'){
+
+                    <div class="col-lg-3">
+
+                        <label class="form-label">
+
+                            Year
+
+                        </label>
+
+                        <select
+                            class="form-select"
+                            [(ngModel)]="selectedYear">
+
+                            @for(year of years; track year){
+
+                            <option [value]="year">
+
+                                {{year}}
+
+                            </option>
+
+                            }
+
+                        </select>
+
+                    </div>
+
+                    }
+
+                    <div class="col-lg-3">
+
+                        <button
+                            class="apply-btn"
+                            (click)="applyFilter()">
+
+                            <i class="fa-solid fa-filter"></i>
+
+                            Apply Filter
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= SUMMARY ================= -->
+    <section class="cards-section">
+
+        <div class="container">
+
+            <div class="row g-4">
+
+                <!-- TOTAL -->
+
+                <div class="col-lg-4 col-md-6">
+
+                    <div class="summary-card">
+
+                        <div class="icon orange">
+
+                            <i class="fa-solid fa-wallet"></i>
+
+                        </div>
+
+                        <span>Total Expense</span>
+
+                        <h2>
+
+                            ₹{{totalExpense | number}}
+
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <!-- TRANSACTIONS -->
+
+                <div class="col-lg-4 col-md-6">
+
+                    <div class="summary-card">
+
+                        <div class="icon green">
+
+                            <i class="fa-solid fa-receipt"></i>
+
+                        </div>
+
+                        <span>Total Transactions</span>
+
+                        <h2>
+
+                            {{transactionCount}}
+
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CATEGORY -->
+
+                <div class="col-lg-4 col-md-6">
+
+                    <div class="summary-card">
+
+                        <div class="icon blue">
+
+                            <i class="fa-solid fa-chart-pie"></i>
+
+                        </div>
+
+                        <span>Highest Category</span>
+
+                        <h2>
+
+                            {{highestCategory}}
+
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <!-- AVERAGE -->
+
+                <div class="col-lg-4 col-md-6">
+
+                    <div class="summary-card">
+
+                        <div class="icon orange">
+
+                            <i class="fa-solid fa-calculator"></i>
+
+                        </div>
+
+                        <span>Average Expense</span>
+
+                        <h2>
+
+                            ₹{{averageExpense | number}}
+
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <!-- MONTH -->
+
+                <div class="col-lg-4 col-md-6">
+
+                    <div class="summary-card">
+
+                        <div class="icon green">
+
+                            <i class="fa-solid fa-calendar"></i>
+
+                        </div>
+
+                        <span>Highest Month</span>
+
+                        <h2>
+
+                            {{highestMonth}}
+
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <!-- SINGLE -->
+
+                <div class="col-lg-4 col-md-6">
+
+                    <div class="summary-card">
+
+                        <div class="icon blue">
+
+                            <i class="fa-solid fa-money-bill-wave"></i>
+
+                        </div>
+
+                        <span>Largest Expense</span>
+
+                        <h2>
+
+                            ₹{{largestExpense | number}}
+
+                        </h2>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= COMPARISON ================= -->
+    <section class="comparison-section">
+
+        <div class="container">
+
+            <div class="comparison-card">
+
+                <div class="comparison-icon">
+
+                    <i class="fa-solid fa-chart-line"></i>
+
+                </div>
+
+                <div class="comparison-content">
+
+                    <h3>
+
+                        Spending Comparison
+
+                    </h3>
+
+                    <p>
+
+                        Compared to the previous period,
+                        your spending has
+                                        
+                        @if(comparison > 0) {
+                        
+                            <strong class="text-danger">
+                                increased by {{comparison}}%
+                            </strong>
+                        
+                        } @else if(comparison < 0) {
+                        
+                            <strong class="text-success">
+                                decreased by {{comparison * -1}}%
+                            </strong>
+                        
+                        } @else {
+                        
+                            <strong>
+                                no change
+                            </strong>
+                        
+                        }
+                    
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================= CHARTS ================= -->
+    <section class="charts-section">
+
+        <div class="container">
+        
+            <div class="row g-4">
+            
+                <!-- PIE -->
+                <div class="col-lg-6">
+                
+                    <div class="chart-card zoomIn">
+                    
+                        <h3>Expense by Category</h3>
+                    
+                        <p>Distribution of all expenses.</p>
+                    
+                        <div class="chart-box">
+                        
+                            <canvas baseChart [data]="pieChartData" [type]="pieChartType" [options]="pieChartOptions"></canvas>
+                        
+                        </div>
+                    
+                    </div>
+                
+                </div>
+            
+                <!-- BAR -->
+                <div class="col-lg-6">
+                
+                    <div class="chart-card zoomIn">
+                    
+                        <h3>Monthly Spending</h3>
+                    
+                        <p>Compare expenses across months.</p>
+                    
+                        <div class="chart-box">
+                        
+                            <canvas baseChart [data]="barChartData" [type]="barChartType" [options]="barChartOptions"></canvas>
+                        
+                        </div>
+                    
+                    </div>
+                
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+    <!-- ================= TREND ================= -->
+    <section class="trend-section">
+
+        <div class="container">
+        
+            <div class="chart-card zoomIn">
+            
+                <h3>Expense Trend</h3>
+
+                @if(selectedView === 'month') {
+
+                    <p>
+                        Weekly spending trend for
+                        {{selectedMonth}} {{selectedYear}}.
+                    </p>
+                
+                } @else if(selectedView === 'year') {
+                
+                    <p>
+                        Monthly spending trend for
+                        {{selectedYear}}.
+                    </p>
+                
+                } @else {
+                
+                    <p>
+                        Monthly spending trend across
+                        all recorded expenses.
+                    </p>
+                
+                }
+
+                <div class="trend-chart">
+                
+                    <canvas baseChart [data]="lineChartData" [type]="lineChartType" [options]="lineChartOptions"></canvas>
+                
+                </div>
+            
+            </div>
+        
+        </div>
+
+    </section>
+
+    <!-- ================= INSIGHTS ================= -->
+    <section class="insight-section">
+
+        <div class="container">
+        
+            <div class="section-title">
+            
+                <h2>Financial Insights</h2>
+                
+                <p>Automatically generated from your expenses.</p>
+            
+            </div>
+            
+            <div class="row g-4">
+            
+                <div class="col-md-6">
+                
+                    <div class="insight-card">
+                    
+                        <i class="fa-solid fa-arrow-trend-up"></i>
+                    
+                        <p>
+
+                            @if(selectedView === 'all') {
+                            
+                                Select Monthly or Yearly view
+                                to compare spending with the
+                                previous period.
+                            
+                            } @else if(comparison > 0) {
+                            
+                                You spent
+                            
+                                <strong class="text-danger">
+                                    {{ comparison }}%
+                                </strong>
+                            
+                                more than the previous period.
+                            
+                            } @else if(comparison < 0) {
+                            
+                                You spent
+                            
+                                <strong class="text-success">
+                                    {{ comparison * -1 }}%
+                                </strong>
+                            
+                                less than the previous period.
+                            
+                            } @else {
+                            
+                                No spending change compared
+                                with the previous period.
+                            
+                            }
+                        
+                        </p>
+                    
+                    </div>
+                
+                </div>
+            
+                <div class="col-md-6">
+                
+                    <div class="insight-card">
+                    
+                        <i class="fa-solid fa-basket-shopping"></i>
+                    
+                        <p>
+
+                            @if(highestCategory !== 'N/A') {
+                            
+                                <strong>
+                                    {{ highestCategory }}
+                                </strong>
+                            
+                                is your highest spending category.
+                            
+                            } @else {
+                            
+                                No category data available.
+                            
+                            }
+                        
+                        </p>
+                    
+                    </div>
+                
+                </div>
+            
+                <div class="col-md-6">
+                
+                    <div class="insight-card">
+                    
+                        <i class="fa-solid fa-calendar"></i>
+                    
+                        <p>
+
+                            @if(highestMonth !== 'N/A') {
+                            
+                                <strong>
+                                    {{ highestMonth }}
+                                </strong>
+                            
+                                was your highest spending month.
+                            
+                            } @else {
+                            
+                                No monthly spending data available.
+                            
+                            }
+                        
+                        </p>
+                    
+                    </div>
+                
+                </div>
+            
+                <div class="col-md-6">
+                
+                    <div class="insight-card">
+                    
+                        <i class="fa-solid fa-coins"></i>
+                    
+                        <p>
+
+                            Average daily expense is
+                                                
+                            <strong>
+                                ₹{{ averageDailyExpense | number }}
+                            </strong>.
+                        
+                        </p>
+                    
+                    </div>
+                
+                </div>
+            
+            </div>
+        
+        </div>
+    
+    </section>
+
+</div>

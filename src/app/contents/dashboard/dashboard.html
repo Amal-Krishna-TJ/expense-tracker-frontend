@@ -1,0 +1,528 @@
+<app-navbar></app-navbar>
+
+@if (value) {
+    <!-- HERO -->
+    <section class="hero">
+
+        <div class="overlay"></div>
+
+        <div class="container hero-content">
+
+            <h2>{{ greeting }}, {{ user.fullName }} 👋</h2>
+
+            <div class="row align-items-center">
+
+                <div class="col-lg-6">
+
+                    <span class="tag">Smart Expense Management</span>
+
+                    <h1>
+                        Track Every Rupee.
+                        <br>
+                        Save Every Dream.
+                    </h1>
+
+                    <p>
+                        Manage your income, expenses, budgets and savings
+                        in one secure place. Get insights into your spending
+                        and achieve your financial goals effortlessly.
+                    </p>
+
+                    <div class="hero-buttons">
+
+                        @if (isAdmin) {
+                            <button class="btn btn-warning btn-lg me-3" routerLink="/profile">
+                                Get Started
+                            </button>
+                        }
+                        @else {
+                            <button class="btn btn-warning btn-lg me-3" routerLink="/monthlyExpense">
+                                Get Started
+                            </button>
+                        }
+
+                        <button class="btn btn-outline-light btn-lg" routerLink="/about">
+                            Learn More
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <div class="col-lg-6 text-center">
+
+                    <img
+                        src="expenseTrackerIllustration.png"
+                        class="hero-image"
+                        alt="Expense Tracker">
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Statistics -->
+    <section class="stats">
+
+        <div class="card-bg">
+
+            <div class="container">
+
+                <div class="row g-4">
+
+                    <div class="col-md-3">
+
+                        <div class="stat-card fadeUp">
+
+                            <h2>₹{{ displayTotalExpense }}</h2>
+
+                            <p>Total Expense</p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-3">
+
+                        <div class="stat-card fadeUp">
+
+                            <h2>₹{{ displayThisMonthExpense }}</h2>
+
+                            <p>Monthly Expense</p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-3">
+
+                        <div class="stat-card fadeUp">
+
+                            <h2>{{ displayTransactionCount }}</h2>
+
+                            <p>Transaction Count</p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-3">
+
+                        <div class="stat-card fadeUp">
+
+                            <h2>₹{{ displayTodayExpense }}</h2>
+
+                            <p>Today Expense</p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Features -->
+    <section class="features">
+
+        <div class="container">
+
+            <h2 class="section-title">
+                Why Choose Expense Tracker?
+            </h2>
+
+            <div class="row g-4">
+
+                <div class="col-md-4">
+
+                    <div class="feature-card fadeUp">
+
+                        <h3>📊 Summary</h3>
+
+                        <p>
+                            View total income,
+                            expenses 
+                            instantly.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="col-md-4">
+
+                    <div class="feature-card fadeUp">
+
+                        <h3>📅 Monthly Report</h3>
+
+                        <p>
+                            Analyze your monthly
+                            financial performance.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="col-md-4">
+
+                    <div class="feature-card fadeUp">
+
+                        <h3>🔒 Secure</h3>
+
+                        <p>
+                            Your financial information
+                            is safely protected.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Categories -->
+    <section class="categories">
+
+        <div class="card-bg">
+
+            <div class="container">
+
+                <h2 class="section-title">
+
+                    Expense Categories
+
+                </h2>
+
+                <div class="row g-4">
+
+                    <div class="col-md-4">
+
+                        <div class="category-card fadeUp">
+
+                            🚗 Transportation
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-4">
+
+                        <div class="category-card fadeUp">
+
+                            🛒 Groceries
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-4">
+
+                        <div class="category-card fadeUp">
+
+                            🎮 Entertainment
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-4">
+
+                        <div class="category-card fadeUp">
+
+                            🛍 Shopping
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-4">
+
+                        <div class="category-card fadeUp">
+
+                            ❤️ Healthcare
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-4">
+
+                        <div class="category-card fadeUp">
+
+                            📦 Unassigned
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- CTA -->
+    <section class="cta">
+
+        <div class="container text-center">
+
+            <h2>
+
+                Ready to Take Control of Your Money?
+
+            </h2>
+
+            @if (value === '{"id":"6a60b4894330ea70f06199a1","fullName":"Admin","username":"admin","email":"admin@gmail.com","role":"admin","avatar":"MProfile5.png","heroColor":"#003049"}') {
+                <button class="btn btn-warning btn-lg mt-4" routerLink="/profile">
+
+                    Start Tracking
+
+                </button>
+            }
+            @else {
+                <button class="btn btn-warning btn-lg mt-4" routerLink="/expenseSummary">
+
+                    Start Tracking
+
+                </button>
+            }
+
+        </div>
+
+    </section>
+} @else {
+    <!-- HERO -->
+    <section class="hero">
+
+        <div class="overlay"></div>
+
+        <div class="container hero-content">
+
+            <div class="row align-items-center">
+
+                <div class="col-lg-6">
+
+                    <span class="tag">Smart Expense Management</span>
+
+                    <h1>
+                        Track Every Rupee.
+                        <br>
+                        Save Every Dream.
+                    </h1>
+
+                    <p>
+                        Manage your income, expenses, budgets and savings
+                        in one secure place. Get insights into your spending
+                        and achieve your financial goals effortlessly.
+                    </p>
+
+                    <div class="hero-buttons">
+
+                        <button class="btn btn-warning btn-lg me-3" routerLink="/login">
+                            Get Started
+                        </button>
+
+                        <button class="btn btn-outline-light btn-lg" routerLink="/about">
+                            Learn More
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <div class="col-lg-6 text-center">
+
+                    <img
+                        src="expenseTrackerIllustration.png"
+                        class="hero-image"
+                        alt="Expense Tracker">
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Features -->
+    <section class="features">
+
+        <div class="container">
+
+            <h2 class="section-title">
+                Why Choose Expense Tracker?
+            </h2>
+
+            <div class="row g-4">
+
+                <div class="col-md-4">
+
+                    <div class="feature-card fadeUp">
+
+                        <h3>📊 Summary</h3>
+
+                        <p>
+                            View total income,
+                            expenses 
+                            instantly.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="col-md-4">
+
+                    <div class="feature-card fadeUp">
+
+                        <h3>📅 Monthly Report</h3>
+
+                        <p>
+                            Analyze your monthly
+                            financial performance.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="col-md-4">
+
+                    <div class="feature-card fadeUp">
+
+                        <h3>🔒 Secure</h3>
+
+                        <p>
+                            Your financial information
+                            is safely protected.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Categories -->
+    <section class="categories">
+
+        <div class="card-bg">
+
+            <div class="container">
+
+                <h2 class="section-title">
+
+                    Expense Categories
+
+                </h2>
+
+                <div class="row g-4">
+
+                    <div class="col-md-4">
+
+                        <div class="category-card fadeUp">
+
+                            🚗 Transportation
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-4">
+
+                        <div class="category-card fadeUp">
+
+                            🛒 Groceries
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-4">
+
+                        <div class="category-card fadeUp">
+
+                            🎮 Entertainment
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-4">
+
+                        <div class="category-card fadeUp">
+
+                            🛍 Shopping
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-4">
+
+                        <div class="category-card fadeUp">
+
+                            ❤️ Healthcare
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-4">
+
+                        <div class="category-card fadeUp">
+
+                            📦 Unassigned
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- CTA -->
+    <section class="cta">
+
+        <div class="container text-center">
+
+            <h2>
+
+                Ready to Take Control of Your Money?
+
+            </h2>
+
+            <button class="btn btn-warning btn-lg mt-4" routerLink="/login">
+
+                Start Tracking
+
+            </button>
+
+        </div>
+
+    </section>
+}

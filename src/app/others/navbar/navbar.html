@@ -1,0 +1,165 @@
+@if (value) {
+  @if (isAdmin) {
+    <!-- ================= NAVBAR ADMIN ================= -->
+    <nav class="glass-navbar navbar navbar-expand-lg fixed-top">
+      <div class="container">
+      
+        <a class="navbar-brand text-white" style="padding-left: 40px;" routerLink="/home">Monthly Expense Tracker</a>
+      
+        <button
+          class="navbar-toggler"
+          data-bs-toggle="collapse"
+          data-bs-target="#menu"
+          type="button"
+          aria-controls="menu"
+          aria-expanded="false"
+          aria-label="Toggle navigation">
+      
+          <span class="navbar-toggler-icon"></span>
+      
+        </button>
+      
+        <div class="collapse navbar-collapse justify-content-end" id="menu">
+        
+          <ul class="navbar-nav align-items-center">
+          
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/home" routerLinkActive="active-btn" [routerLinkActiveOptions]="{exact: true}" data-bs-dismiss="collapse">Home</a>
+            </li>
+          
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/about" routerLinkActive="active-btn" data-bs-dismiss="collapse">About</a>
+            </li>
+          
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/profile" routerLinkActive="active-btn" data-bs-dismiss="collapse">Profile</a>
+            </li>
+          
+            <li class="nav-item">
+              <a class="nav-link" (click)="logout()" data-bs-dismiss="collapse">Logout</a>
+            </li>
+          
+            <li class="nav-item" style="padding-right: 40px;">
+              <a class="nav-link" routerLink="/contact" routerLinkActive="active-btn" data-bs-dismiss="collapse">Contact</a>
+            </li>
+          
+          </ul>
+        
+        </div>
+      
+      </div>
+    </nav>
+  }
+  @else {
+    <!-- ================= NAVBAR USER ================= -->
+    <nav class="glass-navbar navbar navbar-expand-lg fixed-top">
+      <div class="container">
+      
+        <a class="navbar-brand" routerLink="/home">Monthly Expense Tracker</a>
+      
+        <button
+          class="navbar-toggler"
+          data-bs-toggle="collapse"
+          data-bs-target="#menu"
+          type="button"
+          aria-controls="menu"
+          aria-expanded="false"
+          aria-label="Toggle navigation">
+      
+          <span class="navbar-toggler-icon"></span>
+      
+        </button>
+      
+        <div class="collapse navbar-collapse justify-content-end" id="menu">
+        
+          <ul class="navbar-nav align-items-center">
+          
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/home" routerLinkActive="active-btn" [routerLinkActiveOptions]="{exact: true}" data-bs-dismiss="collapse">Home</a>
+            </li>
+          
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/about" routerLinkActive="active-btn" data-bs-dismiss="collapse">About</a>
+            </li>
+          
+            <li class="nav-item dropdown" (shown.bs.dropdown)="isExpenseDropdownOpen = true" (hidden.bs.dropdown)="isExpenseDropdownOpen = false">
+
+              <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+              
+                Expenses <i class="fa-solid" [class.fa-angle-down]="!isExpenseDropdownOpen" [class.fa-angle-up]="isExpenseDropdownOpen"></i>
+              
+              </a>
+              <ul class="dropdown-menu custom-dropdown">
+                <li><a class="dropdown-item" routerLink="/addExpense" routerLinkActive="active-btn" data-bs-dismiss="collapse">Add Expense</a></li>
+                <li><a class="dropdown-item" routerLink="/monthlyExpense" routerLinkActive="active-btn" data-bs-dismiss="collapse">Monthly Expense</a></li>
+                <li><a class="dropdown-item" routerLink="/expenseSummary" routerLinkActive="active-btn" data-bs-dismiss="collapse">Expense Summary</a></li>
+                <li><a class="dropdown-item" routerLink="/recurringExpense" routerLinkActive="active-btn" data-bs-dismiss="collapse">Recurring Expense</a></li>
+                <li><a class="dropdown-item" routerLink="/recurringHistory" routerLinkActive="active-btn" data-bs-dismiss="collapse">Recurring History</a></li>
+                <li><a class="dropdown-item" routerLink="/budget" routerLinkActive="active-btn" data-bs-dismiss="collapse">Budget Management</a></li>
+                <li><a class="dropdown-item" routerLink="/reports" routerLinkActive="active-btn" data-bs-dismiss="collapse">Reports</a></li>
+              </ul>
+            </li>
+          
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/profile" routerLinkActive="active-btn" data-bs-dismiss="collapse">Profile</a>
+            </li>
+          
+            <li class="nav-item">
+              <a class="nav-link" (click)="logout()" data-bs-dismiss="collapse">Logout</a>
+            </li>
+          
+            <li class="nav-item" style="padding-right: 40px;">
+              <a class="nav-link" routerLink="/contact" routerLinkActive="active-btn" data-bs-dismiss="collapse">Contact</a>
+            </li>
+          
+          </ul>
+        
+        </div>
+      
+      </div>
+    </nav>
+  }
+}
+@else {
+  <!-- ================= NAVBAR OUT ================= -->
+  <nav class="glass-navbar navbar navbar-expand-lg fixed-top">
+    <div class="container">
+
+      <a class="navbar-brand text-white" style="padding-left: 40px;" routerLink="/home">Monthly Expense Tracker</a>
+
+      <button
+        class="navbar-toggler"
+        data-bs-toggle="collapse"
+        data-bs-target="#menu"
+        type="button"
+        aria-controls="menu"
+        aria-expanded="false"
+        aria-label="Toggle navigation">
+
+        <span class="navbar-toggler-icon"></span>
+
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-end" id="menu">
+
+        <ul class="navbar-nav align-items-center">
+
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/home" routerLinkActive="active-btn" [routerLinkActiveOptions]="{exact: true}" data-bs-dismiss="collapse">Home</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/login" routerLinkActive="active-btn" data-bs-dismiss="collapse">Login</a>
+          </li>
+
+          <li class="nav-item" style="padding-right: 40px;">
+            <a class="nav-link" routerLink="/contact" routerLinkActive="active-btn" data-bs-dismiss="collapse">Contact</a>
+          </li>
+
+        </ul>
+
+      </div>
+
+    </div>
+  </nav>
+}

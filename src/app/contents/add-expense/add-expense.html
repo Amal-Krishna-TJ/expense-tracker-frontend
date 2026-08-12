@@ -1,0 +1,701 @@
+<app-navbar></app-navbar>
+
+<!-- EXPENSE Page -->
+<div class="expense-page">
+
+    <!-- Page Header -->
+
+    <section class="expense-header">
+        <div class="container">
+
+            <span class="page-tag">Expense Management</span>
+
+            <h1>Add Expense</h1>
+
+            <p>
+                Record your expenses and keep track of where your money goes.
+            </p>
+
+        </div>
+
+    </section>
+
+    <section class="expense-section">
+        
+        <div class="container">
+
+            <p style="color: #D4DCD7;">
+                Select how you want to add expenses.
+            </p>
+
+            <button
+            class="save-btn select-btn" (click)="selectedDataTrue()" style="margin-right: 15px;">
+                Add Expense Manually
+            </button>
+
+            <button
+            class="save-btn select-btn" (click)="selectedDataFalse()" style="margin-left: 15px;">
+                Import CSV Expense
+            </button>
+
+        </div>
+        
+    </section>
+    @if (selectedData === 0) {
+
+        <!-- Add Expense Form -->
+
+        <section class="expense-section">
+        
+            <div class="container">
+            
+                <div class="expense-card">
+                
+                    <div class="card-heading">
+                    
+                        <div>
+                            <h2>Add New Expense</h2>
+                        
+                            <p>
+                                Enter the details of your expense below.
+                            </p>
+                        </div>
+                    
+                        <div class="heading-icon">
+                            <i class="fa-solid fa-wallet"></i>
+                        </div>
+                    
+                    </div>
+                
+                
+                    <form (ngSubmit)="addExpense()">
+                    
+                        <div class="row g-4">
+                        
+                            <!-- Amount -->
+                        
+                            <div class="col-md-6">
+                            
+                                <label class="form-label">
+                                    Amount
+                                </label>
+                            
+                                <div class="input-group-custom">
+                                
+                                    <span class="input-icon">₹</span>
+                                
+                                    <input
+                                        type="number"
+                                        class="form-control"
+                                        name="amount"
+                                        [(ngModel)]="expense.amount"
+                                        placeholder="Enter amount"
+                                        min="1"
+                                        required>
+                                
+                                </div>
+                            
+                            </div>
+                        
+                        
+                            <!-- Category -->
+                        
+                            <div class="col-md-6">
+                            
+                                <label class="form-label">
+                                    Category
+                                </label>
+                            
+                                <div class="category-wrapper">
+                                
+                                    <select
+                                        class="form-select"
+                                        name="category"
+                                        [(ngModel)]="expense.category"
+                                        required>
+                                
+                                        <option value="" disabled>
+                                            Select category
+                                        </option>
+                                    
+                                        @for(category of categories; track category) {
+                                        
+                                            <option [value]="category">
+                                                {{ category }}
+                                            </option>
+                                        
+                                        }
+                                    
+                                    </select>
+                                
+                                
+                                    <!-- Add Custom Category -->
+                                
+                                    <button
+                                        type="button"
+                                        class="add-category-btn"
+                                        title="Add new category"
+                                        (click)="openCategoryModal()">
+                                
+                                        <i class="fa-solid fa-plus"></i>
+                                
+                                    </button>
+                                
+                                </div>
+                            
+                            </div>
+                        
+                        
+                            <!-- Date -->
+                        
+                            <div class="col-md-6">
+                            
+                                <label class="form-label">
+                                    Expense Date
+                                </label>
+                            
+                                <input
+                                    type="date"
+                                    class="form-control"
+                                    name="date"
+                                    [(ngModel)]="expense.date"
+                                    required>
+                            
+                            </div>
+                        
+                        
+                            <!-- Payment Method -->
+                        
+                            <div class="col-md-6">
+                            
+                                <label class="form-label">
+                                    Payment Method
+                                </label>
+                            
+                                <select
+                                    class="form-select"
+                                    name="paymentMethod"
+                                    [(ngModel)]="expense.paymentMethod"
+                                    required>
+                            
+                                    <option value="" disabled>
+                                        Select payment method
+                                    </option>
+                                
+                                    <option value="Cash">Cash</option>
+                                
+                                    <option value="UPI">UPI</option>
+                                
+                                    <option value="Credit Card">
+                                        Credit Card
+                                    </option>
+                                
+                                    <option value="Debit Card">
+                                        Debit Card
+                                    </option>
+                                
+                                    <option value="Bank Transfer">
+                                        Bank Transfer
+                                    </option>
+                                
+                                </select>
+                            
+                            </div>
+                        
+                        
+                            <!-- Description -->
+                        
+                            <div class="col-12">
+                            
+                                <label class="form-label">
+                                    Description
+                                </label>
+                            
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    name="description"
+                                    [(ngModel)]="expense.description"
+                                    placeholder="Example: Weekly grocery shopping">
+                            
+                            </div>
+                        
+                        
+                            <!-- Notes -->
+                        
+                            <div class="col-12">
+                            
+                                <label class="form-label">
+                                    Notes
+                                </label>
+                            
+                                <textarea
+                                    class="form-control"
+                                    name="notes"
+                                    [(ngModel)]="expense.notes"
+                                    rows="4"
+                                    placeholder="Add additional notes (optional)">
+                                </textarea>
+                            
+                            </div>
+                        
+                        </div>
+                    
+                    
+                        <!-- Buttons -->
+                    
+                        <div class="form-actions">
+                        
+                            <button
+                                type="button"
+                                class="reset-btn"
+                                (click)="resetForm()">
+                        
+                                <i class="fa-solid fa-rotate-left"></i>
+                        
+                                Reset
+                        
+                            </button>
+                        
+                        
+                            <button
+                                type="submit"
+                                class="save-btn">
+                        
+                                <i class="fa-solid fa-plus"></i>
+                        
+                                Add Expense
+                        
+                            </button>
+                        
+                        </div>
+                    
+                    </form>
+                
+                </div>
+            
+            </div>
+        
+        </section>
+    }
+    @else if(selectedData === 1) {
+        <!-- Upload Card -->
+
+        <div class="container mb-5">
+        
+            <div class="upload-card">
+            
+                <div class="upload-area">
+                
+                    <i class="fa-solid fa-cloud-arrow-up upload-icon"></i>
+                
+                    <h3>Select CSV File</h3>
+                
+                    <p>
+                        Drag & Drop your CSV file here or click below.
+                    </p>
+                
+                    <input
+                        type="file"
+                        accept=".csv"
+                        (change)="onFileSelected($event)"
+                        class="form-control mt-3">
+                
+                    @if(fileName){
+                    
+                        <div class="alert alert-success mt-4">
+                        
+                            <strong>Selected File:</strong>
+                        
+                            {{fileName}}
+                        
+                        </div>
+                    
+                    }
+                
+                </div>
+            
+            </div>
+        
+        </div>
+
+        @if(expenses.length){
+        
+        <div class="container mb-5">
+        
+            <div class="preview-card">
+            
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                
+                    <h3>Preview</h3>
+                
+                    <span class="badge bg-success">
+                    
+                        {{expenses.length}} Records
+                    
+                    </span>
+                
+                </div>
+            
+                <div class="table-responsive">
+                
+                    <table class="table table-hover">
+                    
+                        <thead>
+                        
+                            <tr>
+                            
+                                <th>Amount</th>
+                                <th>Category</th>
+                                <th>Date</th>
+                                <th>Payment</th>
+                                <th>Description</th>
+                                <th>Notes</th>
+                            
+                            </tr>
+                        
+                        </thead>
+                    
+                        <tbody>
+                        
+                            @for(expense of paginatedPreviewExpenses; track $index){
+                            
+                            <tr>
+                            
+                                <td>₹{{expense.amount}}</td>
+                                <td>{{expense.category}}</td>
+                                <td>{{expense.date}}</td>
+                                <td>{{expense.paymentMethod}}</td>
+                                <td>{{expense.description}}</td>
+                                <td>{{expense.notes}}</td>
+                            
+                            </tr>
+                        
+                            }
+                        
+                        </tbody>
+                    
+                    </table>
+                
+                </div>
+
+                <app-pagination
+
+                    [currentPage]="previewCurrentPage"
+
+                    [totalPages]="previewTotalPages"
+
+                    (pageChange)="onPreviewPageChange($event)">
+
+                </app-pagination>
+            
+                <div class="text-end mt-4">
+                
+                    <button
+                    class="btn btn-secondary me-2"
+                    (click)="cancelImport()">
+
+                        Cancel
+
+                    </button>
+                
+                    <button
+                        class="btn btn-import"
+                        (click)="importExpenses()">
+                
+                        <i class="fa-solid fa-file-import me-2"></i>
+                
+                        Import Expenses
+                
+                    </button>
+                
+                </div>
+            
+            </div>
+
+            @if(importSuccess){
+
+                <div class="container mb-5">
+                
+                    <div class="alert alert-success text-center">
+                    
+                        <i class="fa-solid fa-circle-check me-2"></i>
+                    
+                        {{ importedCount }} expenses imported successfully.
+                    
+                    </div>
+
+                </div>
+
+            }
+
+            @if(failedImportCount > 0) {
+
+                <div class="alert alert-danger text-center mt-3">
+                
+                    <i class="fa-solid fa-circle-xmark me-2"></i>
+                
+                    {{ failedImportCount }} expenses failed to import.
+                
+                </div>
+            
+            }
+        
+        </div>
+
+        }
+    } 
+
+    <!-- Recent Expenses -->
+
+    <section class="recent-section">
+
+        <div class="container">
+
+            <div class="recent-card">
+
+                <div class="recent-heading">
+
+                    <div>
+                        <h2>Recent Expenses</h2>
+
+                        <p>
+                            Your latest expense transactions.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                @if(recentExpenses.length > 0) {
+
+                    <div class="table-responsive">
+
+                        <table class="table expense-table">
+
+                            <thead>
+
+                                <tr>
+
+                                    <th>Date</th>
+
+                                    <th>Category</th>
+
+                                    <th>Description</th>
+
+                                    <th>Payment</th>
+
+                                    <th>Amount</th>
+
+                                    <th>Action</th>
+
+                                </tr>
+
+                            </thead>
+
+
+                            <tbody>
+
+                                @for(item of paginatedRecentExpenses; track item._id){
+
+                                    <tr>
+
+                                        <td>
+                                            {{ item.date }}
+                                        </td>
+
+                                        <td>
+
+                                            <span class="category-badge">
+                                                {{ item.category }}
+                                            </span>
+
+                                        </td>
+
+                                        <td>
+                                            {{ item.description }}
+                                        </td>
+
+                                        <td>
+                                            {{ item.paymentMethod }}
+                                        </td>
+
+                                        <td class="amount">
+
+                                            ₹{{ item.amount }}
+
+                                        </td>
+
+                                        <td>
+
+                                            <button
+                                                class="delete-btn"
+                                                (click)="deleteExpense(item._id)">
+
+                                                <i class="fa-solid fa-trash"></i>
+
+                                            </button>
+
+                                        </td>
+
+                                    </tr>
+
+                                }
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                    <app-pagination
+
+                        [currentPage]="recentCurrentPage"
+                    
+                        [totalPages]="recentTotalPages"
+                    
+                        (pageChange)="onRecentPageChange($event)">
+
+                    </app-pagination>
+
+                } @else {
+
+                    <div class="empty-expenses">
+
+                        <i class="fa-solid fa-receipt"></i>
+
+                        <h4>No expenses yet</h4>
+
+                        <p>
+                            Your recently added expenses will appear here.
+                        </p>
+
+                    </div>
+
+                }
+
+            </div>
+
+        </div>
+
+    </section>
+
+</div>
+
+<!-- DELETE Pop Up -->
+@if(showDeletePopUp) {
+
+    <div class="success-toast">
+
+        <div class="success-icon">
+
+            <i class="fa-solid fa-check"></i>
+
+        </div>
+
+        <div>
+
+            <strong>Delete Successful</strong>
+
+            <p>
+                Item is permenantly deleted
+            </p>
+
+        </div>
+
+    </div>
+
+}
+
+
+<!-- Custom Category Modal -->
+@if(showCategoryModal) {
+
+    <div
+        class="category-modal-overlay"
+        (click)="closeCategoryModal()">
+
+        <div
+            class="category-modal"
+            (click)="$event.stopPropagation()">
+
+
+            <div class="modal-icon">
+
+                <i class="fa-solid fa-layer-group"></i>
+
+            </div>
+
+
+            <h3>Create Category</h3>
+
+            <p>
+                Create a custom category for your expenses.
+            </p>
+
+
+            <label class="form-label">
+                Category Name
+            </label>
+
+            <input
+                type="text"
+                class="form-control"
+                [(ngModel)]="newCategory"
+                placeholder="Example: Gym Membership">
+
+
+            <div class="modal-actions">
+
+                <button
+                    class="modal-cancel-btn"
+                    (click)="closeCategoryModal()">
+
+                    Cancel
+
+                </button>
+
+
+                <button
+                    class="modal-save-btn"
+                    (click)="addCategory()">
+
+                    <i class="fa-solid fa-plus"></i>
+
+                    Add Category
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+}
+
+
+<!-- SUCCESS Pop Up -->
+@if(showSuccess) {
+
+    <div class="success-toast">
+
+        <div class="success-icon">
+
+            <i class="fa-solid fa-check"></i>
+
+        </div>
+
+        <div>
+
+            <strong>Expense Added!</strong>
+
+            <p>
+                Your expense has been saved successfully.
+            </p>
+
+        </div>
+
+    </div>
+
+}

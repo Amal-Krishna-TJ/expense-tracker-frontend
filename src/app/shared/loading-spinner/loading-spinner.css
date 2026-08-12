@@ -1,0 +1,117 @@
+/* =========================================
+   GLOBAL LOADING
+========================================= */
+
+.loading-overlay {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 9999;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 20px;
+
+    backdrop-filter: blur(5px);
+
+}
+
+
+.spinner-container {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 30px;
+
+    color: #c3c3c3;
+
+}
+
+
+.spinner-border {
+
+    width: 50px;
+
+    height: 50px;
+
+}
+
+
+.spinner-container p {
+
+    font-size: 15px;
+
+    font-weight: 500;
+
+    margin-bottom: 0;
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 576px) {
+
+    .spinner-container {
+
+        padding: 20px;
+
+    }
+
+
+    .spinner-border {
+
+        width: 42px;
+
+        height: 42px;
+
+    }
+
+
+    .spinner-container p {
+
+        font-size: 14px;
+
+    }
+
+}
+
+
+/* =========================================
+   VERY SMALL PHONES
+========================================= */
+
+@media (max-width: 380px) {
+
+    .spinner-border {
+
+        width: 38px;
+
+        height: 38px;
+
+    }
+
+
+    .spinner-container p {
+
+        font-size: 13px;
+
+    }
+
+}

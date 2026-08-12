@@ -1,0 +1,672 @@
+/* You can add global styles to this file, and also import other style files */
+body{
+    margin:0;
+    background: black;
+}
+
+.swal2-container {
+    z-index: 999999 !important;
+}
+
+/* ================================
+   SWEET ALERT THEME LOGIN
+================================ */
+
+.login-popup{
+
+    background:rgba(255, 255, 255, 0.107);
+
+    backdrop-filter:blur(15px);
+    -webkit-backdrop-filter:blur(15px);
+
+    border:1px solid rgba(255,255,255,.15);
+    
+    box-shadow:0 8px 32px rgba(0,0,0,.2);
+
+    border-radius: 24px;
+
+}
+
+.login-popup-title{
+
+    color:#FFFFF4!important;
+
+    font-size:28px!important;
+
+    font-weight:700!important;
+
+}
+
+.login-popup-html{
+
+    color:#FFFFFF!important;
+
+    font-size:16px!important;
+
+}
+
+.login-popup-confirm{
+
+    background:#FF1010!important;
+
+    color:white!important;
+
+    border-radius:12px!important;
+
+    border: none;
+
+    padding:10px 26px!important;
+
+    font-weight:600!important;
+
+    transition:.3s;
+
+}
+
+.login-popup-confirm:hover{
+
+    transform:translateY(-2px);
+
+    border: 3px solid #D60101;
+
+}
+
+.login-popup-icon{
+
+    border-color:#FF1010!important;
+    color:#FF1010!important;
+    font-size:50px;
+
+}
+
+/* ================================
+   SWEET ALERT THEME REGISTER
+================================ */
+
+.register-popup{
+
+    background:rgba(255, 255, 255, 0.107);
+
+    backdrop-filter:blur(15px);
+    -webkit-backdrop-filter:blur(15px);
+
+    border:1px solid rgba(255,255,255,.15);
+    
+    box-shadow:0 8px 32px rgba(0,0,0,.2);
+
+    border-radius: 24px;
+
+}
+
+.register-popup-title{
+
+    color:#FFFFF4!important;
+
+    font-size:28px!important;
+
+    font-weight:700!important;
+
+}
+
+.register-popup-html{
+
+    color:#FFFFFF!important;
+
+    font-size:16px!important;
+
+}
+
+.register-popup-confirm{
+
+    background:#FF1010!important;
+
+    color:white!important;
+
+    border-radius:12px!important;
+
+    border: none;
+
+    padding:10px 26px!important;
+
+    font-weight:600!important;
+
+    transition:.3s;
+
+}
+
+.register-popup-confirm:hover{
+
+    transform:translateY(-2px);
+
+    border: 3px solid #D60101;
+
+}
+
+.register-popup-icon{
+
+    border-color:#FF1010!important;
+    color:#FF1010!important;
+    font-size:50px;
+
+}
+
+
+.register-success-popup{
+
+    background:rgba(255, 255, 255, 0.107);
+
+    backdrop-filter:blur(15px);
+    -webkit-backdrop-filter:blur(15px);
+
+    border:1px solid rgba(255,255,255,.15);
+    
+    box-shadow:0 8px 32px rgba(0,0,0,.2);
+
+    border-radius: 24px;
+
+}
+
+.register-success-popup-title{
+
+    color:#FFFFF4!important;
+
+    font-size:28px!important;
+
+    font-weight:700!important;
+
+}
+
+.register-success-popup-html{
+
+    color:#FFFFFF!important;
+
+    font-size:16px!important;
+
+}
+
+.register-success-popup-confirm{
+
+    background:#0ADF74!important;
+
+    color:white!important;
+
+    border-radius:12px!important;
+
+    border: none;
+
+    padding:10px 26px!important;
+
+    font-weight:600!important;
+
+    transition:.3s;
+
+}
+
+.register-success-popup-confirm:hover{
+
+    transform:translateY(-2px);
+
+    border: 3px solid #03C765;
+
+}
+
+.register-success-popup-icon{
+
+    border-color:#0ADF74!important;
+    color:#0ADF74!important;
+    font-size:50px;
+
+}
+
+/* ================================
+   SWEET ALERT THEME PROFILE
+================================ */
+
+.profile-delete-popup{
+
+    background:rgba(255, 255, 255, 0.107);
+
+    backdrop-filter:blur(15px);
+    -webkit-backdrop-filter:blur(15px);
+
+    border:1px solid rgba(255,255,255,.15);
+    
+    box-shadow:0 8px 32px rgba(0,0,0,.2);
+
+    border-radius: 24px;
+
+}
+
+.profile-delete-popup-title{
+
+    color:#FFFFF4!important;
+
+    font-size:28px!important;
+
+    font-weight:700!important;
+
+}
+
+.profile-delete-popup-html{
+
+    color:#FFFFFF!important;
+
+    font-size:16px!important;
+
+}
+
+.profile-delete-popup-confirm{
+
+    background:#FF1010!important;
+
+    color:white!important;
+
+    border-radius:12px!important;
+
+    padding:10px 26px!important;
+
+    font-weight:600!important;
+
+    transition:.3s;
+
+    border: none;
+
+}
+
+.profile-delete-popup-confirm:hover{
+
+    transform:translateY(-2px);
+
+    border: 3px solid #D60101;
+
+}
+
+.profile-delete-popup-cancel{
+
+    background:#636363!important;
+
+    color:white!important;
+
+    border-radius:12px!important;
+
+    padding:10px 26px!important;
+
+    font-weight:600!important;
+    
+    margin-right: 10px;
+
+    border: none;
+
+}
+
+.profile-delete-popup-cancel:hover{
+
+    transform:translateY(-2px);
+
+    border: 3px solid #565656;
+
+}
+
+.profile-delete-popup-icon{
+
+    border-color:#FF1010!important;
+    color:#FF1010!important;
+    font-size:50px;
+
+}
+
+
+.profile-success-popup{
+
+    background:rgba(255, 255, 255, 0.107);
+
+    backdrop-filter:blur(15px);
+    -webkit-backdrop-filter:blur(15px);
+
+    border:1px solid rgba(255,255,255,.15);
+    
+    box-shadow:0 8px 32px rgba(0,0,0,.2);
+
+    color:#FFFFFF;
+
+    border-radius: 24px;
+
+}
+
+.profile-success-popup-title{
+
+    color:#FFFFF4!important;
+
+    font-size:28px!important;
+
+    font-weight:700!important;
+
+}
+
+.profile-success-popup-html{
+
+    color:#FFFFFF!important;
+
+    font-size:16px!important;
+
+}
+
+.profile-success-popup-icon{
+
+    border-color:#0ADF74!important;
+    color:#0ADF74!important;
+    font-size:50px;
+
+}
+
+/* ================================
+   SWEET ALERT THEME PROFILE
+================================ */
+
+.logout-popup{
+
+    background:rgba(255, 255, 255, 0.107);
+
+    backdrop-filter:blur(15px);
+    -webkit-backdrop-filter:blur(15px);
+
+    border:1px solid rgba(255,255,255,.15);
+    
+    box-shadow:0 8px 32px rgba(0,0,0,.2);
+
+    border-radius: 24px;
+
+}
+
+.logout-popup-title{
+
+    color:#FFFFF4!important;
+
+    font-size:28px!important;
+
+    font-weight:700!important;
+
+}
+
+.logout-popup-html{
+
+    color:#FFFFFF!important;
+
+    font-size:16px!important;
+
+}
+
+.logout-popup-confirm{
+
+    background:#FF2A00!important;
+
+    color:white!important;
+
+    border-radius:12px!important;
+
+    border: none;
+
+    padding:10px 26px!important;
+
+    font-weight:600!important;
+
+    transition:.3s;
+
+}
+
+.logout-popup-confirm:hover{
+
+    transform:translateY(-2px);
+
+    border: 3px solid #DA2400;
+
+}
+
+.logout-popup-cancel{
+
+    background:#636363!important;
+
+    color:white!important;
+
+    border-radius:12px!important;
+
+    padding:10px 26px!important;
+
+    font-weight:600!important;
+    
+    margin-right: 10px;
+
+    border: none;
+
+}
+
+.logout-popup-cancel:hover{
+
+    transform:translateY(-2px);
+
+    border: 3px solid #565656;
+
+}
+
+.logout-popup-icon{
+
+    border-color:#FF6F00!important;
+    color:#FF6F00!important;
+    font-size:50px;
+
+}
+
+
+/* ================================
+   MICRO ANIMATIONS
+================================ */
+
+.card,
+.summary-card,
+.expense-card,
+.budget-card,
+.report-card,
+.user-card{
+
+    transition:all .35s ease;
+
+}
+
+.card:hover,
+.summary-card:hover,
+.expense-card:hover,
+.budget-card:hover,
+.report-card:hover,
+.user-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 18px 35px rgba(0,0,0,.15);
+
+}
+
+.btn{
+
+    transition:all .3s ease;
+
+}
+
+.btn:hover{
+
+    transform:scale(1.05);
+
+}
+
+.btn:active{
+
+    transform:scale(.95);
+
+}
+
+.nav-link{
+
+    position:relative;
+
+    transition:.3s;
+
+}
+
+.nav-link::after{
+
+    content:'';
+
+    position:absolute;
+
+    left:50%;
+
+    border: none;
+
+    border-radius: 10px;
+
+    bottom:-6px;
+
+    width:0;
+
+    height:3px;
+
+    background:#FFFFF4;
+
+    transition:.3s;
+
+    transform:translateX(-50%);
+
+}
+
+.nav-link:hover::after{
+
+    width:100%;
+
+}
+
+.profile-avatar{
+
+    transition:.4s;
+
+}
+
+.profile-avatar:hover{
+
+    transform:rotate(8deg) scale(1.08);
+
+}
+
+.hero-icon{
+
+    transition:.5s;
+
+}
+
+.hero-icon:hover{
+
+    transform:rotate(10deg) scale(1.1);
+
+    color:#F77F00;
+
+}
+
+tbody tr{
+
+    transition:.25s;
+
+}
+
+tbody tr:hover{
+
+    transform:translateX(5px);
+
+}
+
+.fade-up{
+
+    animation:fadeUp .6s ease;
+
+}
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(25px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:none;
+
+    }
+
+}
+
+.notification-card{
+
+    animation:slideRight .5s ease;
+
+}
+
+@keyframes slideRight{
+
+    from{
+
+        opacity:0;
+
+        transform:translateX(-40px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:none;
+
+    }
+
+}
+
+.category-card{
+
+    transition:.35s;
+
+}
+
+.category-card:hover{
+
+    transform:scale(1.03);
+
+}
+
+.chart-container{
+
+    animation:zoomIn .7s ease;
+
+}
+
+@keyframes zoomIn{
+
+    from{
+
+        opacity:0;
+
+        transform:scale(.9);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1);
+
+    }
+
+}

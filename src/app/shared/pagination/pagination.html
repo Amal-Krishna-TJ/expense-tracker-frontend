@@ -1,0 +1,44 @@
+@if (totalPages > 1) {
+    <div class="pagination-wrapper">
+
+        <button
+            class="page-btn"
+
+            (click)="previousPage()"
+
+            [disabled]="currentPage===1">
+
+            <i class="fa-solid fa-angle-left"></i>
+
+        </button>
+
+        @for(page of pages; track page){
+
+            <button
+
+                class="page-number"
+
+                [class.active]="page===currentPage"
+
+                (click)="goToPage(page)">
+
+                {{page}}
+
+            </button>
+
+        }
+
+        <button
+
+            class="page-btn"
+
+            (click)="nextPage()"
+
+            [disabled]="currentPage===totalPages">
+
+            <i class="fa-solid fa-angle-right"></i>
+
+        </button>
+
+    </div>
+}

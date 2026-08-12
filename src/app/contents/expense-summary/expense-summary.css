@@ -1,0 +1,810 @@
+.summary-page{
+    background:#FFFFF4;
+    min-height:100vh;
+}
+
+/* Header */
+
+.summary-header{
+    background:#003049;
+    color:white;
+    padding:100px 0 120px;
+}
+
+.summary-header .container{
+    animation:fadeUp .8s;
+}
+
+.page-tag{
+    background:#F77F00;
+    padding:8px 18px;
+    border-radius:30px;
+    display:inline-block;
+    margin-bottom:15px;
+}
+
+.summary-header h1{
+    font-size:48px;
+    font-weight:700;
+}
+
+.summary-header p{
+    max-width:700px;
+    opacity:.85;
+}
+
+/* Filter */
+
+.filter-section{
+    margin-top:-70px;
+}
+
+.filter-card{
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 12px 30px rgba(0,48,73,.12);
+    animation:slideUp .8s;
+}
+
+.apply-btn{
+    width:100%;
+    height:50px;
+    border:none;
+    background:#F77F00;
+    color:white;
+    border-radius:12px;
+    transition:.3s;
+}
+
+.apply-btn:hover{
+    background:#003049;
+}
+
+/* Cards */
+
+.cards-section{
+    padding:60px 0;
+}
+
+.summary-card{
+    background:white;
+    border-radius:20px;
+    padding:30px;
+    text-align:center;
+    transition:.35s;
+    box-shadow:0 8px 25px rgba(0,48,73,.08);
+}
+
+.summary-card:hover{
+    transform:translateY(-10px);
+}
+
+.icon{
+    width:65px;
+    height:65px;
+    margin:auto;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:white;
+    font-size:24px;
+    margin-bottom:18px;
+}
+
+.orange{
+    background:#F77F00;
+}
+
+.green{
+    background:#00BF7C;
+}
+
+.blue{
+    background:#003049;
+}
+
+.summary-card span{
+    color:#777;
+}
+
+.summary-card h2{
+    color:#003049;
+    font-weight:700;
+    margin-top:12px;
+}
+
+/* Comparison */
+
+.comparison-section{
+    padding-bottom:70px;
+}
+
+.comparison-card{
+    display:flex;
+    align-items:center;
+    gap:25px;
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 10px 25px rgba(0,48,73,.08);
+}
+
+.comparison-icon{
+    width:80px;
+    height:80px;
+    border-radius:50%;
+    background:#F77F00;
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:30px;
+}
+
+.text-danger{
+    color:#F77F00;
+}
+
+.text-success{
+    color:#00BF7C;
+}
+
+@keyframes fadeUp{
+
+    from{
+        opacity:0;
+        transform:translateY(35px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+@keyframes slideUp{
+
+    from{
+        opacity:0;
+        transform:translateY(45px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+/* Chart */
+.charts-section{
+
+    padding:40px 0;
+
+}
+
+.chart-card{
+
+    background:white;
+
+    padding:30px;
+
+    border-radius:20px;
+
+    box-shadow:0 10px 25px rgba(0,48,73,.08);
+
+    transition:.35s;
+
+    height:100%;
+
+}
+
+.chart-card:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.chart-box canvas,
+.trend-chart canvas {
+
+    width: 100% !important;
+
+    height: 100% !important;
+
+}
+
+.trend-section{
+
+    padding-bottom:60px;
+
+}
+
+.trend-chart{
+
+    height:350px;
+
+    margin-top:20px;
+
+}
+
+/* Section */
+.insight-section{
+
+    padding-bottom:80px;
+
+}
+
+.section-title{
+
+    margin-bottom:35px;
+
+}
+
+.section-title h2{
+
+    color:#003049;
+
+    font-weight:700;
+
+}
+
+.section-title p{
+
+    color:#777;
+
+}
+
+/* Insights Card */
+.insight-card{
+
+    display:flex;
+
+    gap:20px;
+
+    align-items:flex-start;
+
+    padding:25px;
+
+    background:white;
+
+    border-radius:18px;
+
+    box-shadow:0 8px 20px rgba(0,48,73,.08);
+
+    transition:.35s;
+
+    animation:fadeUp .7s;
+
+}
+
+.insight-card:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.insight-card i{
+
+    width:55px;
+
+    height:55px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:#F77F00;
+
+    color:white;
+
+    font-size:22px;
+
+    flex-shrink:0;
+
+}
+
+.insight-card p{
+
+    margin:0;
+
+    color:#555;
+
+    line-height:1.7;
+
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 991px) {
+
+    .summary-header {
+
+        padding: 60px 20px;
+
+        text-align: center;
+
+    }
+
+    .summary-header h1 {
+
+        font-size: 42px;
+
+    }
+
+    .summary-header p {
+
+        font-size: 16px;
+
+    }
+
+
+    /* FILTER */
+
+    .filter-section {
+
+        padding: 35px 20px;
+
+    }
+
+    .filter-card {
+
+        padding: 25px;
+
+    }
+
+
+    .apply-btn {
+
+        width: 100%;
+
+    }
+
+
+    /* SUMMARY CARDS */
+
+    .cards-section {
+
+        padding: 40px 20px;
+
+    }
+
+
+    .summary-card {
+
+        min-height: 145px;
+
+    }
+
+
+    /* COMPARISON */
+
+    .comparison-section {
+
+        padding: 35px 20px;
+
+    }
+
+
+    .comparison-card {
+
+        padding: 25px;
+
+    }
+
+
+    /* CHARTS */
+
+    .charts-section,
+
+    .trend-section {
+
+        padding: 40px 20px;
+
+    }
+
+
+    .chart-card {
+
+        width: 100%;
+
+    }
+
+
+    .chart-box {
+
+        min-height: 320px;
+
+    }
+
+
+    .trend-chart {
+
+        min-height: 350px;
+
+    }
+
+
+    /* INSIGHTS */
+
+    .insight-section {
+
+        padding: 40px 20px;
+
+    }
+
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 576px) {
+
+    .summary-header {
+
+        padding: 45px 15px;
+
+        text-align: center;
+
+    }
+
+
+    .summary-header h1 {
+
+        font-size: 30px;
+
+        line-height: 1.2;
+
+    }
+
+
+    .summary-header p {
+
+        font-size: 14px;
+
+        line-height: 1.6;
+
+    }
+
+
+    .page-tag {
+
+        font-size: 12px;
+
+    }
+
+
+    /* FILTER */
+
+    .filter-section {
+
+        padding: 25px 15px;
+
+    }
+
+
+    .filter-card {
+
+        padding: 20px 16px;
+
+        border-radius: 18px;
+
+    }
+
+
+    .filter-card .form-label {
+
+        font-size: 14px;
+
+    }
+
+
+    .filter-card .form-select {
+
+        width: 100%;
+
+        min-height: 45px;
+
+        font-size: 14px;
+
+    }
+
+
+    .apply-btn {
+
+        width: 100%;
+
+        min-height: 45px;
+
+        margin-top: 5px;
+
+    }
+
+
+    /* SUMMARY */
+
+    .cards-section {
+
+        padding: 35px 15px;
+
+    }
+
+
+    .summary-card {
+
+        width: 100%;
+
+        min-height: 130px;
+
+        padding: 20px;
+
+    }
+
+
+    .summary-card span {
+
+        font-size: 13px;
+
+    }
+
+
+    .summary-card h2 {
+
+        font-size: 27px;
+
+    }
+
+
+    /* COMPARISON */
+
+    .comparison-section {
+
+        padding: 30px 15px;
+
+    }
+
+
+    .comparison-card {
+
+        padding: 20px;
+
+        border-radius: 18px;
+
+        text-align: center;
+
+    }
+
+
+    .comparison-icon {
+
+        margin: 0 auto 15px;
+
+    }
+
+
+    .comparison-content h3 {
+
+        font-size: 22px;
+
+    }
+
+
+    .comparison-content p {
+
+        font-size: 14px;
+
+        line-height: 1.7;
+
+    }
+
+
+    /* CHARTS */
+
+    .charts-section,
+
+    .trend-section {
+
+        padding: 30px 15px;
+
+    }
+
+
+    .chart-card {
+
+        padding: 20px 15px;
+
+        border-radius: 18px;
+
+    }
+
+
+    .chart-card h3 {
+
+        font-size: 21px;
+
+    }
+
+
+    .chart-card p {
+
+        font-size: 13px;
+
+        line-height: 1.6;
+
+    }
+
+
+    /* CHART CONTAINERS */
+
+    .chart-box {
+
+        position: relative;
+
+        width: 100%;
+
+        height: 300px;
+
+        min-height: 0;
+
+    }
+
+
+    .trend-chart {
+
+        position: relative;
+
+        width: 100%;
+
+        height: 300px;
+
+        min-height: 0;
+
+    }
+
+
+    /* INSIGHTS */
+
+    .insight-section {
+
+        padding: 35px 15px;
+
+    }
+
+
+    .section-title h2 {
+
+        font-size: 27px;
+
+    }
+
+
+    .section-title p {
+
+        font-size: 13px;
+
+    }
+
+
+    .insight-card {
+
+        min-height: 120px;
+
+        padding: 20px;
+
+    }
+
+
+    .insight-card p {
+
+        font-size: 14px;
+
+        line-height: 1.7;
+
+    }
+
+}
+
+/* =========================================
+   VERY SMALL PHONES
+========================================= */
+
+@media (max-width: 380px) {
+
+    .summary-header {
+
+        padding: 35px 12px;
+
+    }
+
+
+    .summary-header h1 {
+
+        font-size: 27px;
+
+    }
+
+
+    .summary-header p {
+
+        font-size: 13px;
+
+    }
+
+
+    .filter-card {
+
+        padding: 17px 13px;
+
+    }
+
+
+    .summary-card {
+
+        min-height: 115px;
+
+        padding: 17px;
+
+    }
+
+
+    .summary-card h2 {
+
+        font-size: 24px;
+
+    }
+
+
+    .comparison-card {
+
+        padding: 17px;
+
+    }
+
+
+    .chart-card {
+
+        padding: 17px 12px;
+
+    }
+
+
+    .chart-card h3 {
+
+        font-size: 19px;
+
+    }
+
+
+    .chart-box,
+
+    .trend-chart {
+
+        height: 260px;
+
+    }
+
+
+    .insight-card {
+
+        padding: 17px;
+
+    }
+
+
+    .insight-card p {
+
+        font-size: 13px;
+
+    }
+
+}

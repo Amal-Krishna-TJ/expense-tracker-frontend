@@ -1,0 +1,488 @@
+<app-navbar></app-navbar>
+
+<!-- LOGIN PAGE -->
+
+<div class="login-page">
+
+    <div class="overlay"></div>
+
+    <div class="login-container">
+
+        <h2>Sign In</h2>
+
+        <h3>Have an account?</h3>
+
+        <form [formGroup]="loginForm" (ngSubmit)="login()">
+
+            <div class="form-group">
+
+                <input type="text" class="form-control" placeholder="Username" formControlName="username">
+
+            </div>
+
+            <div class="form-group password-box">
+
+                <input [type]="showEyeValue ? 'text' : 'password'" class="form-control" placeholder="Password" formControlName="password">
+
+                <button (click)="showEye()" type="button" class="eye-btn"><i class="fa-solid" [class.fa-eye]="showEyeValue" [class.fa-eye-slash]="!showEyeValue"></i></button>
+
+            </div>
+
+            <button
+            type="submit"
+            class="btn-login"
+            [disabled]="isLoading">
+                
+                @if(isLoading) {
+                
+                    <span
+                        class="spinner-border spinner-border-sm me-2">
+                    </span>
+                
+                    SIGNING IN...
+                
+                } @else {
+                
+                    SIGN IN
+                
+                }
+            
+            </button>
+
+            <div class="options">
+
+                <label>
+
+                    <input type="checkbox">
+
+                    Remember Me
+
+                </label>
+
+                <a class="forgot-link" (click)="openForgotPassword()">
+                    Forgot Password
+                </a>
+
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="register-link-container">
+
+                <a
+                    routerLink="/register"
+                    class="link">
+                        
+                    <u>Don't have an account?</u>
+                        
+                </a>
+            
+            </div>
+
+            <section class="social-section">
+
+                <div class="social-icons">
+
+                    <i class="fab fa-facebook-f"></i>
+
+                    <i class="fab fa-instagram"></i>
+
+                    <i class="fab fa-x-twitter"></i>
+
+                    <i class="fab fa-linkedin-in"></i>
+
+                </div>
+            
+            </section>
+
+        </form>
+
+    </div>
+
+</div>
+
+<!-- LOGIN LOADING POPUP -->
+
+@if(isLoading) {
+
+    <div class="login-loading-overlay">
+
+        <div class="loading-container">
+
+            @if(loginSuccess) {
+
+                <div class="spinner-border login-spinner">
+                    <span class="visually-hidden">
+                        Loading...
+                    </span>
+                </div>
+
+                <h3>Login Successful!</h3>
+
+                <p>
+                    Preparing your dashboard...
+                </p>
+
+            } @else {
+
+                <div class="spinner-border login-spinner">
+                    <span class="visually-hidden">
+                        Loading...
+                    </span>
+                </div>
+
+                <h3>Verifying your credentials...</h3>
+
+            }
+
+        </div>
+
+    </div>
+
+}
+
+<!-- LOGIN ERROR POPUP -->
+
+@if(showFailed) {
+
+    <div class="failed-toast">
+
+        <div class="failed-icon">
+
+            <i class="fa-solid fa-xmark"></i>
+
+        </div>
+
+        <div>
+
+            <strong>Login Failed!</strong>
+
+            <p>
+                Invalid username or password.
+            </p>
+
+        </div>
+
+    </div>
+
+}
+
+<!-- FORGOT PASSWORD POPUP -->
+
+@if(showForgotPassword){
+
+<div class="forgot-overlay">
+
+    <div class="forgot-card">
+
+        <button
+
+        class="close-btn"
+
+        (click)="closeForgotPassword()">
+
+            <i class="fa-solid fa-xmark"></i>
+
+        </button>
+
+        <div class="forgot-header">
+
+            <i class="fa-solid fa-key forgot-icon"></i>
+
+            <h2>Forgot Password</h2>
+
+        </div>
+
+        <!-- STEP 1 -->
+
+        @if(step===1){
+
+        <div>
+
+            <p>
+
+                Enter your registered email.
+
+            </p>
+
+            <input
+
+            type="email"
+
+            class="form-control"
+
+            placeholder="Email"
+
+            [(ngModel)]="forgotEmail">
+
+            <button
+
+            class="btn btn-otp w-100 mt-4"
+
+            (click)="sendOTP()"
+
+            [disabled]="isSending">
+
+                @if(isSending){
+
+                    Sending...
+
+                }@else{
+
+                    Send OTP
+
+                }
+
+            </button>
+
+        </div>
+
+        }
+
+        <!-- STEP 2 -->
+
+        @if(step===2){
+
+        <div>
+
+            <p>
+
+                Enter the OTP sent to your email.
+
+            </p>
+
+            <div class="otp-container">
+
+                @for(digit of otpDigits; track $index){
+                
+                    <input
+                
+                        [id]="'otp-' + $index"
+                
+                        class="otp-box"
+                
+                        type="text"
+                
+                        inputmode="numeric"
+                
+                        maxlength="1"
+                
+                        [value]="digit"
+                
+                        (input)="onOtpInput($event, $index)"
+                
+                        (keydown)="onOtpKeydown($event, $index)"
+                
+                        (paste)="onOtpPaste($event)"
+                
+                    >
+                
+                }
+            
+            </div>
+
+            <button
+
+            class="btn btn-verify w-100 mt-4"
+
+            (click)="verifyOTP()"
+            
+            [disabled]="otp.length !== 6">
+
+                Verify OTP
+
+            </button>
+
+            <div class="text-center mt-3">
+
+                @if(!canResend){
+
+                    Resend OTP in {{resendCountdown}} sec
+
+                }
+
+                @if(canResend){
+
+                    <a
+                        class="resend-link"
+                        (click)="sendOTP()">
+                                
+                        Resend OTP
+                                
+                    </a>
+
+                }
+
+            </div>
+
+        </div>
+
+        }
+
+        <!-- STEP 3 -->
+
+        @if(step===3){
+
+            <div>
+            
+                <p class="reset-description">
+                
+                    Create a new password for your account.
+                
+                </p>
+            
+                <!-- New Password -->
+            
+                <div class="password-wrapper">
+                
+                    <input
+                
+                        [type]="showNewPassword ? 'text' : 'password'"
+                
+                        class="form-control"
+                
+                        placeholder="New Password"
+                
+                        [(ngModel)]="newPassword"
+                
+                        (input)="checkPasswordStrength()">
+                
+                    <button
+                
+                        type="button"
+                
+                        class="password-toggle"
+                
+                        (click)="showNewPassword = !showNewPassword">
+                
+                        <i
+                
+                            class="fa-solid"
+                
+                            [class.fa-eye]="!showNewPassword"
+                
+                            [class.fa-eye-slash]="showNewPassword">
+                
+                        </i>
+                    
+                    </button>
+                
+                </div>
+            
+            
+                <!-- Password Strength -->
+            
+                @if(passwordStrength){
+                
+                    <div
+                
+                        class="password-strength"
+                
+                        [class]="passwordStrengthClass">
+                
+                        <span>
+                        
+                            Password strength:
+                        
+                            <strong>
+                            
+                                {{passwordStrength}}
+                            
+                            </strong>
+                        
+                        </span>
+                    
+                    </div>
+                
+                }
+            
+            
+                <!-- Confirm Password -->
+            
+                <div class="password-wrapper">
+                
+                    <input
+                
+                        [type]="showConfirmPassword ? 'text' : 'password'"
+                
+                        class="form-control"
+                
+                        placeholder="Confirm Password"
+                
+                        [(ngModel)]="confirmPassword">
+                
+                    <button
+                
+                        type="button"
+                
+                        class="password-toggle"
+                
+                        (click)="showConfirmPassword = !showConfirmPassword">
+                
+                        <i
+                
+                            class="fa-solid"
+                
+                            [class.fa-eye]="!showConfirmPassword"
+                
+                            [class.fa-eye-slash]="showConfirmPassword">
+                
+                        </i>
+                    
+                    </button>
+                
+                </div>
+            
+            
+                <!-- Password mismatch -->
+            
+                @if(
+            
+                    confirmPassword &&
+            
+                    newPassword !== confirmPassword
+            
+                ){
+                
+                    <small class="password-error">
+                    
+                        Passwords do not match.
+                    
+                    </small>
+                
+                }
+            
+            
+                <button
+            
+                    class="btn btn-warning w-100 mt-4"
+            
+                    (click)="changePassword()"
+            
+                    [disabled]="
+            
+                        !newPassword ||
+            
+                        !confirmPassword ||
+            
+                        newPassword !== confirmPassword ||
+            
+                        newPassword.length < 6
+            
+                    ">
+            
+                    <i class="fa-solid fa-lock"></i>
+            
+                    Update Password
+            
+                </button>
+            
+            </div>
+
+        }
+
+    </div>
+
+</div>
+
+}

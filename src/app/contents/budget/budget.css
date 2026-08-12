@@ -1,0 +1,524 @@
+/* HERO */
+.hero-section{
+
+    background:#003049;
+
+    color:white;
+
+    padding:110px 0;
+
+}
+
+.hero-icon{
+
+    font-size:130px;
+
+    color:#F77F00;
+
+}
+
+/* SUMMARY CARD */
+.summary-card{
+
+    background:rgba(255,255,255,.75);
+
+    backdrop-filter:blur(15px);
+
+    border-radius:20px;
+
+    padding:30px;
+
+    text-align:center;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+
+    transition:.3s;
+
+}
+
+.summary-card:hover{
+
+    transform:translateY(-5px);
+
+}
+
+.summary-card i{
+
+    font-size:40px;
+
+    color:#F77F00;
+
+    margin-bottom:15px;
+
+}
+
+.summary-card h3{
+
+    color:#003049;
+
+    font-weight:700;
+
+}
+
+.summary-card p{
+
+    color:#777;
+
+}
+
+/* BUTTON */
+.add-btn{
+
+    background:#F77F00;
+
+    color:white;
+
+    border:none;
+
+    padding:12px 25px;
+
+    border-radius:12px;
+
+}
+
+.add-btn:hover{
+
+    background:#003049;
+
+    color:white;
+
+}
+
+/* BUDGET CARD */
+.budget-card{
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:25px;
+
+    margin-bottom:25px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+    transition:.3s;
+
+}
+
+.budget-card:hover{
+
+    transform:translateY(-5px);
+
+}
+
+/* PROGRESS BAR */
+.progress{
+
+    height:18px;
+
+    border-radius:20px;
+
+}
+
+.progress-bar{
+
+    border-radius:20px;
+
+}
+
+/* MODAL */
+.modal-content{
+
+    border-radius:20px;
+
+    border:none;
+
+    background:#FFFFF4;
+
+}
+
+.modal-header{
+
+    background:#003049;
+
+    color:white;
+
+}
+
+.modal-title{
+
+    font-weight:600;
+
+}
+
+/* FORM */
+.form-control,
+.form-select{
+
+    border-radius:12px;
+
+}
+
+.form-control:focus,
+.form-select:focus{
+
+    border-color:#F77F00;
+
+    box-shadow:0 0 0 .2rem rgba(247,127,0,.25);
+
+}
+
+.bg-select{
+
+    border-radius:12px;
+    border: 2px solid #d1d1d1;
+    width: 250px;
+    height: 50px;
+    float: right;
+    margin-bottom: 10px;
+
+}
+
+.bg-control{
+
+    border-radius:12px;
+    border: 2px solid #d1d1d1;
+    width: 980px;
+    height: 50px;
+    float: left;
+    margin-bottom: 10px;
+
+}
+
+.bg-control:focus,
+.bg-select:focus{
+
+    border-color:#F77F00;
+
+    border: 2px solid #d06c00;
+
+    box-shadow:0 0 0 .2rem rgba(247,127,0,.25);
+
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 991px) {
+
+    .hero-section {
+        padding: 60px 20px;
+        text-align: center;
+    }
+
+    .hero-section h1 {
+        font-size: 42px;
+    }
+
+    .hero-section p {
+        font-size: 16px;
+    }
+
+    .hero-icon {
+        margin-top: 30px;
+        font-size: 70px;
+    }
+
+
+    /* SUMMARY */
+
+    .summary-card {
+        min-height: 140px;
+    }
+
+
+    /* FILTER / ACTIONS */
+
+    .text-end.mb-4 {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        align-items: center;
+    }
+
+    .bg-control {
+        flex: 1;
+        min-width: 220px;
+        margin-bottom: 0 !important;
+    }
+
+    .bg-select {
+        width: 180px;
+    }
+
+    .add-btn {
+        min-height: 45px;
+    }
+
+
+    /* BUDGET CARD */
+
+    .budget-card {
+        padding: 25px;
+    }
+
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 576px) {
+
+    .hero-section {
+        padding: 45px 15px;
+        text-align: center;
+    }
+
+    .hero-section h1 {
+        font-size: 30px;
+        line-height: 1.2;
+    }
+
+    .hero-section p {
+        font-size: 14px;
+        line-height: 1.7;
+    }
+
+    .hero-icon {
+        font-size: 55px;
+        margin-top: 25px;
+    }
+
+
+    /* SUMMARY CARDS */
+
+    .summary-card {
+        width: 100%;
+        min-height: 120px;
+        padding: 20px;
+        border-radius: 18px;
+    }
+
+    .summary-card h3 {
+        font-size: 27px;
+    }
+
+    .summary-card p {
+        font-size: 13px;
+    }
+
+
+    /* SEARCH + MONTH + BUTTON */
+
+    .text-end.mb-4 {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+
+    .bg-control {
+        width: 100%;
+        min-width: 0;
+        margin-bottom: 0 !important;
+    }
+
+    .bg-select {
+        width: 100%;
+        min-height: 45px;
+    }
+
+    .add-btn {
+        width: 100%;
+        min-height: 45px;
+    }
+
+
+    /* BUDGET CARD */
+
+    .budget-card {
+        padding: 20px 17px;
+        border-radius: 18px;
+    }
+
+
+    .budget-card .row {
+        gap: 15px;
+    }
+
+
+    .budget-card .col-lg-3 {
+        width: 100%;
+        text-align: left !important;
+    }
+
+
+    .budget-card h4 {
+        font-size: 21px;
+        margin-bottom: 5px;
+    }
+
+
+    .budget-card strong {
+        font-size: 13px;
+    }
+
+
+    .budget-card .text-end {
+        text-align: left !important;
+    }
+
+
+    /* ACTION BUTTONS */
+
+    .budget-card .btn {
+        width: 42px;
+        height: 42px;
+        padding: 0;
+    }
+
+
+    /* PROGRESS */
+
+    .budget-card .progress {
+        height: 9px;
+    }
+
+
+    .budget-card .mt-3 {
+        font-size: 13px;
+    }
+
+    #budgetModal .modal-dialog {
+        width: auto;
+        margin: 15px;
+    }
+
+    #budgetModal .modal-content {
+        border-radius: 20px;
+    }
+
+    #budgetModal .modal-header {
+        padding: 18px;
+    }
+
+    #budgetModal .modal-title {
+        font-size: 20px;
+    }
+
+    #budgetModal .modal-body {
+        padding: 18px;
+    }
+
+    #budgetModal .modal-body .form-control,
+    #budgetModal .modal-body .form-select {
+        min-height: 45px;
+        font-size: 14px;
+    }
+
+
+    /* Month + Year */
+
+    #budgetModal .modal-body .row {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    #budgetModal .modal-body .row .col {
+        width: 100%;
+    }
+
+
+    #budgetModal .modal-footer {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 15px 18px;
+    }
+
+    #budgetModal .modal-footer button {
+        width: 100%;
+        min-height: 45px;
+    }
+
+}
+
+/* =========================================
+   VERY SMALL PHONES
+========================================= */
+
+@media (max-width: 380px) {
+
+    .hero-section {
+        padding: 35px 12px;
+    }
+
+    .hero-section h1 {
+        font-size: 26px;
+    }
+
+    .hero-section p {
+        font-size: 13px;
+    }
+
+    .hero-icon {
+        font-size: 48px;
+        margin-top: 20px;
+    }
+
+
+    .summary-card {
+        min-height: 110px;
+        padding: 16px 14px;
+    }
+
+    .summary-card h3 {
+        font-size: 23px;
+    }
+
+    .summary-card p {
+        font-size: 12px;
+    }
+
+
+    .budget-card {
+        padding: 17px 14px;
+        border-radius: 16px;
+    }
+
+    .budget-card h4 {
+        font-size: 18px;
+    }
+
+    .budget-card strong {
+        font-size: 12px;
+    }
+
+    .budget-card .mt-3 {
+        font-size: 12px;
+    }
+
+
+    .budget-card .btn {
+        width: 40px;
+        height: 40px;
+    }
+
+    #budgetModal .modal-dialog {
+        margin: 10px;
+    }
+
+    #budgetModal .modal-header,
+    #budgetModal .modal-body {
+        padding: 15px;
+    }
+
+    #budgetModal .modal-title {
+        font-size: 18px;
+    }
+
+}

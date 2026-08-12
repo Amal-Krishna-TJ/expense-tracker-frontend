@@ -1,0 +1,301 @@
+/* Hero */
+.hero-section{
+
+    background:#003049;
+
+    color:white;
+
+    padding:110px 0;
+
+}
+
+.hero-icon{
+
+    font-size:140px;
+
+    color:#F77F00;
+
+}
+
+/* Card */
+.filter-card{
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:30px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+}
+
+.report-card{
+
+    background:rgba(255,255,255,.8);
+
+    backdrop-filter:blur(15px);
+
+    border-radius:20px;
+
+    padding:35px;
+
+    text-align:center;
+
+    box-shadow:0 12px 30px rgba(0,0,0,.08);
+
+    transition:.3s;
+
+}
+
+.report-card canvas{
+
+    width:100% !important;
+
+    height:350px !important;
+
+}
+
+.report-card:hover{
+
+    transform:translateY(-6px);
+
+}
+
+.report-icon{
+
+    font-size:60px;
+
+    color:#F77F00;
+
+    margin-bottom:20px;
+
+}
+
+.report-card h4{
+
+    color:#003049;
+
+    font-weight:700;
+
+}
+
+.report-card p{
+
+    color:#777;
+
+    margin-bottom:25px;
+
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 991px) {
+
+    .hero-section {
+        padding: 60px 20px;
+        text-align: center;
+    }
+
+    .hero-section h1 {
+        font-size: 42px;
+    }
+
+    .hero-section p {
+        font-size: 16px;
+        line-height: 1.6;
+    }
+
+    .hero-icon {
+        margin-top: 30px;
+        font-size: 70px;
+    }
+
+
+    /* FILTER */
+
+    .filter-card {
+        padding: 25px;
+    }
+
+
+    /* REPORT CARDS */
+
+    .report-card {
+        padding: 25px;
+    }
+
+
+    /* CHARTS */
+
+    .report-card canvas {
+        max-width: 100%;
+    }
+
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 576px) {
+
+    .hero-section {
+        padding: 45px 15px;
+        text-align: center;
+    }
+
+    .hero-section h1 {
+        font-size: 30px;
+        line-height: 1.2;
+    }
+
+    .hero-section p {
+        font-size: 14px;
+        line-height: 1.7;
+    }
+
+    .hero-icon {
+        font-size: 55px;
+        margin-top: 25px;
+    }
+
+
+    /* FILTER */
+
+    .filter-card {
+        padding: 20px 16px;
+        border-radius: 18px;
+    }
+
+    .filter-card label {
+        font-size: 14px;
+    }
+
+    .filter-card .form-select {
+        width: 100%;
+        min-height: 45px;
+        font-size: 14px;
+    }
+
+    .filter-card button {
+        width: 100%;
+        min-height: 45px;
+    }
+
+
+    /* REPORT CARDS */
+
+    .report-card {
+        padding: 20px 16px;
+        border-radius: 18px;
+    }
+
+    .report-card h4 {
+        font-size: 21px;
+    }
+
+    .report-card p {
+        font-size: 13px;
+        line-height: 1.6;
+    }
+
+
+    /* DOWNLOAD BUTTONS */
+
+    .report-card .btn {
+        width: 100%;
+        min-height: 45px;
+    }
+
+
+    /* CHARTS */
+
+    .report-card canvas {
+        width: 100% !important;
+        max-width: 100%;
+    }
+
+    .report-card:has(canvas) {
+        position: relative;
+    }
+
+
+    #expensePieChart,
+    #expenseBarChart {
+        width: 100% !important;
+        height: 280px !important;
+    }
+
+
+    #expenseLineChart {
+        width: 100% !important;
+        height: 300px !important;
+    }
+
+}
+
+/* =========================================
+   VERY SMALL PHONES
+========================================= */
+
+@media (max-width: 380px) {
+
+    .hero-section {
+        padding: 35px 12px;
+    }
+
+    .hero-section h1 {
+        font-size: 26px;
+    }
+
+    .hero-section p {
+        font-size: 13px;
+    }
+
+    .hero-icon {
+        font-size: 48px;
+        margin-top: 20px;
+    }
+
+
+    .filter-card {
+        padding: 17px 13px;
+    }
+
+
+    .report-card {
+        padding: 17px 13px;
+        border-radius: 16px;
+    }
+
+
+    .report-card h4 {
+        font-size: 19px;
+    }
+
+
+    .report-card p {
+        font-size: 12px;
+    }
+
+
+    .report-card .btn {
+        min-height: 43px;
+        font-size: 13px;
+    }
+
+
+    #expensePieChart,
+    #expenseBarChart {
+        height: 240px !important;
+    }
+
+
+    #expenseLineChart {
+        height: 260px !important;
+    }
+
+}

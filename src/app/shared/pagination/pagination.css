@@ -1,0 +1,87 @@
+.pagination-wrapper{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:10px;
+
+    margin-top:35px;
+
+    flex-wrap:wrap;
+
+}
+
+.page-btn{
+
+    width:45px;
+
+    height:45px;
+
+    border:none;
+
+    border-radius:14px;
+
+    background:#003049;
+
+    color:white;
+
+    transition:.3s;
+
+}
+
+.page-btn:hover{
+
+    background:#F77F00;
+
+    transform:translateY(-2px);
+
+}
+
+.page-btn:disabled{
+
+    opacity:.4;
+
+    cursor:not-allowed;
+
+}
+
+.page-number{
+
+    width:45px;
+
+    height:45px;
+
+    border:none;
+
+    border-radius:14px;
+
+    background:#FFFFF4;
+
+    color:#003049;
+
+    font-weight:600;
+
+    transition:.3s;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+
+}
+
+.page-number:hover{
+
+    background:#F77F00;
+
+    color:white;
+
+}
+
+.page-number.active{
+
+    background:#F77F00;
+
+    color:white;
+
+}

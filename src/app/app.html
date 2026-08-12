@@ -1,0 +1,58 @@
+@if(showLogout){
+
+<div class="success-toast">
+
+    <div class="success-icon">
+
+        <i class="fa-solid fa-check"></i>
+
+    </div>
+
+    <div>
+
+        <strong>Logged Out!</strong>
+
+        <p>
+            You have been logged out successfully.
+        </p>
+
+    </div>
+
+</div>
+
+}
+
+@if(showLogin){
+
+<div class="success-toast">
+
+    <div class="success-icon">
+
+        <i class="fa-solid fa-check"></i>
+
+    </div>
+
+    <div>
+
+        <strong>Logged In!</strong>
+
+        <p>
+            You have been logged in successfully.
+        </p>
+
+    </div>
+
+</div>
+
+}
+
+@if(loadingService.loading | async){
+
+    <app-loading-spinner/>
+
+}
+
+
+<div [@routeAnimation]="router.url">
+    <router-outlet></router-outlet>
+</div>

@@ -1,0 +1,51 @@
+<div class="error-page">
+
+    <div class="error-content">
+
+        <div class="error-icon">
+
+            <i class="fa-solid fa-server"></i>
+
+        </div>
+
+
+        <h1>500</h1>
+
+
+        <h2>Server Error</h2>
+
+
+        <p>
+            Something went wrong on our server.
+            Please try again in a few moments.
+        </p>
+
+
+        <div class="error-actions">
+
+            <button
+                class="btn btn-warning"
+                (click)="reloadPage()">
+
+                <i class="fa-solid fa-rotate-right"></i>
+
+                Try Again
+
+            </button>
+
+
+            <button
+                class="btn btn-outline-secondary"
+                routerLink="/home">
+
+                <i class="fa-solid fa-house"></i>
+
+                Go Home
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>

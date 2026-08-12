@@ -1,0 +1,814 @@
+<app-navbar></app-navbar>
+
+<div class="monthly-page">
+
+
+    <!-- HEADER -->
+    <section class="monthly-header">
+
+        <div class="container">
+
+            <span class="page-tag">
+
+                Monthly Overview
+
+            </span>
+
+            <h1>
+
+                {{ currentMonth }}
+                {{ currentYear }}
+
+            </h1>
+
+            <p>
+
+                Track and understand your spending
+                for the current month.
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- SUMMARY CARDS -->
+    <section class="summary-section">
+
+        <div class="container">
+
+            <div class="row g-4">
+
+
+                <!-- TOTAL -->
+
+                <div class="col-lg-3 col-md-6">
+
+                    <div class="summary-card">
+
+                        <div class="summary-icon orange">
+
+                            <i class="fa-solid fa-wallet"></i>
+
+                        </div>
+
+                        <p>Total Spent</p>
+
+                        <h3>
+
+                            ₹{{ totalExpense | number:'1.0-0' }}
+
+                        </h3>
+
+                    </div>
+
+                </div>
+
+
+                <!-- TRANSACTIONS -->
+
+                <div class="col-lg-3 col-md-6">
+
+                    <div class="summary-card">
+
+                        <div class="summary-icon green">
+
+                            <i class="fa-solid fa-receipt"></i>
+
+                        </div>
+
+                        <p>Transactions</p>
+
+                        <h3>
+
+                            {{ transactionCount }}
+
+                        </h3>
+
+                    </div>
+
+                </div>
+
+
+                <!-- TOP CATEGORY -->
+
+                <div class="col-lg-3 col-md-6">
+
+                    <div class="summary-card">
+
+                        <div class="summary-icon blue">
+
+                            <i class="fa-solid fa-chart-pie"></i>
+
+                        </div>
+
+                        <p>Top Category</p>
+
+                        <h3>
+
+                            {{ topCategory }}
+
+                        </h3>
+
+                    </div>
+
+                </div>
+
+
+                <!-- DAILY AVERAGE -->
+
+                <div class="col-lg-3 col-md-6">
+
+                    <div class="summary-card">
+
+                        <div class="summary-icon orange">
+
+                            <i class="fa-solid fa-calendar-day"></i>
+
+                        </div>
+
+                        <p>Daily Average</p>
+
+                        <h3>
+
+                            ₹{{ dailyAverage | number:'1.0-0' }}
+
+                        </h3>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- MONTH COMPARISON -->
+
+            <div class="comparison-card">
+
+                <div>
+
+                    <span>
+
+                        Compared to Last Month
+
+                    </span>
+
+
+                    @if(percentageChange > 0) {
+
+                        <h4 class="increase">
+
+                            <i class="fa-solid fa-arrow-trend-up"></i>
+
+                            {{ percentageChange | number:'1.1-1' }}%
+
+                            higher spending
+
+                        </h4>
+
+                    } @else {
+
+                        <h4 class="decrease">
+
+                            <i class="fa-solid fa-arrow-trend-down"></i>
+
+                            {{ -percentageChange | number:'1.1-1' }}%
+
+                            lower spending
+
+                        </h4>
+
+                    }
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CHARTS -->
+    <section class="charts-section">
+
+        <div class="container">
+
+            <div class="row g-4">
+
+
+                <!-- PIE CHART -->
+
+                <div class="col-lg-6">
+
+                    <div class="chart-card zoomIn">
+
+                        <div class="chart-heading">
+
+                            <h3>
+
+                                Expense by Category
+
+                            </h3>
+
+                            <p>
+
+                                Where your money went this month.
+
+                            </p>
+
+                        </div>
+
+
+                        <div class="chart-container">
+
+                            <canvas
+
+                                baseChart
+
+                                [data]="pieChartData"
+
+                                [type]="pieChartType"
+
+                                [options]="pieChartOptions">
+
+                            </canvas>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- BAR CHART -->
+
+                <div class="col-lg-6">
+
+                    <div class="chart-card zoomIn">
+
+                        <div class="chart-heading">
+
+                            <h3>
+
+                                Weekly Spending
+
+                            </h3>
+
+                            <p>
+
+                                Compare your spending
+                                across each week.
+
+                            </p>
+
+                        </div>
+
+
+                        <div class="chart-container">
+
+                            <canvas
+
+                                baseChart
+
+                                [data]="barChartData"
+
+                                [type]="barChartType"
+
+                                [options]="barChartOptions">
+
+                            </canvas>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CATEGORY BREAKDOWN -->
+    <section class="category-section">
+
+        <div class="container">
+
+            <div class="category-card">
+
+                <div class="section-heading">
+
+                    <h2>
+
+                        Category Breakdown
+
+                    </h2>
+
+                    <p>
+
+                        Detailed summary of your
+                        current month spending.
+
+                    </p>
+
+                </div>
+
+
+                @for(item of categorySummary; track item.category) {
+
+                    <div class="category-item">
+
+
+                        <div class="category-info">
+
+                            <strong>
+
+                                {{ item.category }}
+
+                            </strong>
+
+                            <span>
+
+                                ₹{{ item.amount | number:'1.0-0' }}
+
+                            </span>
+
+                        </div>
+
+
+                        <div class="progress">
+
+                            <div
+
+                                class="progress-bar"
+
+                                [style.width.%]="item.percentage">
+
+                            </div>
+
+                        </div>
+
+
+                        <small>
+
+                            {{ item.percentage | number:'1.1-1' }}%
+
+                            of total expenses
+
+                        </small>
+
+                    </div>
+
+                }
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- TRANSACTIONS -->
+    <section class="transactions-section">
+
+        <div class="container">
+
+            <div class="transactions-card">
+
+
+                <div class="section-heading">
+
+                    <h2>
+
+                        Current Month Transactions
+
+                    </h2>
+
+                    <p>
+
+                        Search and filter your
+                        expenses for this month.
+
+                    </p>
+
+                </div>
+
+
+                <!-- FILTER -->
+
+                <div class="filter-row">
+
+
+                    <div class="search-box">
+
+                        <i class="fa-solid fa-magnifying-glass"></i>
+
+                        <input
+
+                            type="text"
+
+                            [(ngModel)]="searchText"
+
+                            placeholder="Search expenses...">
+
+                    </div>
+
+
+                    <select
+
+                        [(ngModel)]="selectedCategory"
+
+                        class="category-filter">
+
+
+                        <option value="All">
+
+                            All Categories
+
+                        </option>
+
+
+                        @for(category of categories; track category) {
+
+                            <option [value]="category">
+
+                                {{ category }}
+
+                            </option>
+
+                        }
+
+                    </select>
+
+                </div>
+
+
+                <!-- TABLE -->
+
+                <div class="table-responsive">
+
+                    <table class="table expense-table">
+
+                        <thead>
+
+                            <tr>
+
+                                <th>Date</th>
+
+                                <th>Category</th>
+
+                                <th>Description</th>
+
+                                <th>Payment</th>
+
+                                <th>Amount</th>
+                                
+                                <th>Actions</th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody>
+
+                            @for(item of paginatedExpenses; track item._id){
+
+                                <tr>
+
+                                    <td>
+
+                                        {{ item.date | date:'dd MMM yyyy' }}
+
+                                    </td>
+
+                                    <td>
+
+                                        <span class="category-badge">
+
+                                            {{ item.category }}
+
+                                        </span>
+
+                                    </td>
+
+                                    <td>
+
+                                        {{ item.description }}
+
+                                    </td>
+
+                                    <td>
+
+                                        {{ item.paymentMethod }}
+
+                                    </td>
+
+                                    <td class="amount">
+
+                                        ₹{{ item.amount | number:'1.0-0' }}
+
+                                    </td>
+
+                                    <td>
+
+                                        <div class="action-buttons">
+                                        
+                                            <button
+                                                type="button"
+                                                class="edit-btn"
+                                                (click)="openEditModal(item)">
+                                        
+                                                <i class="fa-solid fa-pen"></i>
+                                        
+                                            </button>
+                                        
+                                        
+                                            <button
+                                                type="button"
+                                                class="delete-btn"
+                                                (click)="deleteExpense(item._id)">
+                                        
+                                                <i class="fa-solid fa-trash"></i>
+                                        
+                                            </button>
+                                        
+                                        </div>
+                                    
+                                    </td>
+
+                                </tr>
+
+                            }
+
+                        </tbody>
+
+                    </table>
+
+                    <app-pagination
+
+                        [currentPage]="currentPage"
+                                        
+                        [totalPages]="totalPages"
+                                        
+                        (pageChange)="onPageChange($event)">
+
+                    </app-pagination>
+
+                    @if (paginatedExpenses.length!=0) {
+                        <button class="btn button-success" (click)="downloadExcel()" style="margin-left: 0;">
+
+                            <i class="fa-solid fa-file-excel"></i>
+
+                            Excel
+
+                        </button>
+
+                        <button class="btn button-primary" (click)="downloadCSV()">
+                        
+                            <i class="fa-solid fa-file-csv"></i>
+                        
+                            CSV
+                        
+                        </button>
+
+                        <button class="btn button-danger" (click)="downloadPDF()" style="margin-right: 0;">
+                        
+                            <i class="fa-solid fa-file-pdf"></i>
+                        
+                            PDF
+                        
+                        </button>
+                    }
+
+                </div>
+
+                @if(paginatedExpenses.length===0){
+
+                    <app-empty-state
+
+                        icon="fa-wallet"
+
+                        title="No Expenses"
+
+                        message="Start tracking by adding your first expense."
+
+                        buttonText="Add Expense"
+                                
+                        rlHref="/addExpense">
+
+                    </app-empty-state>
+                        
+                }
+
+            </div>
+
+        </div>
+
+    </section>
+
+</div>
+
+<!-- EDIT MODEL -->
+@if(showEditModal) {
+
+    <div class="edit-modal-overlay">
+
+        <div class="edit-modal">
+
+            <div class="edit-modal-header">
+
+                <div>
+
+                    <h3>
+                        Edit Expense
+                    </h3>
+
+                    <p>
+                        Update your transaction details.
+                    </p>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="modal-close"
+                    (click)="closeEditModal()">
+
+                    <i class="fa-solid fa-xmark"></i>
+
+                </button>
+
+            </div>
+
+
+            <div class="edit-form">
+
+                <div class="form-group">
+
+                    <label>Amount *</label>
+
+                    <input
+                        type="number"
+                        class="form-control"
+                        [(ngModel)]="editExpenseData.amount">
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Category *</label>
+
+                    <select
+                        class="form-control"
+                        [(ngModel)]="editExpenseData.category">
+
+                        @for(category of categories; track category) {
+
+                            <option [value]="category">
+
+                                {{ category }}
+
+                            </option>
+
+                        }
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Date *</label>
+
+                    <input
+                        type="date"
+                        class="form-control"
+                        [(ngModel)]="editExpenseData.date">
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Payment Method *</label>
+
+                    <select
+                        class="form-control"
+                        [(ngModel)]="editExpenseData.paymentMethod">
+
+                        <option value="Cash">
+                            Cash
+                        </option>
+
+                        <option value="UPI">
+                            UPI
+                        </option>
+
+                        <option value="Credit Card">
+                            Credit Card
+                        </option>
+
+                        <option value="Debit Card">
+                            Debit Card
+                        </option>
+
+                        <option value="Bank Transfer">
+                            Bank Transfer
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Description</label>
+
+                    <input
+                        type="text"
+                        class="form-control"
+                        [(ngModel)]="editExpenseData.description">
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Notes</label>
+
+                    <textarea
+                        class="form-control"
+                        rows="3"
+                        [(ngModel)]="editExpenseData.notes">
+                    </textarea>
+
+                </div>
+
+            </div>
+
+
+            <div class="edit-modal-actions">
+
+                <button
+                    type="button"
+                    class="cancel-btn"
+                    (click)="closeEditModal()">
+
+                    Cancel
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="save-btn"
+                    (click)="updateExpense()">
+
+                    <i class="fa-solid fa-check"></i>
+
+                    Save Changes
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+}
+
+<!-- SUCCESS Pop Up -->
+@if(showPopup) {
+
+    <div class="success-toast">
+
+        <div class="success-icon">
+
+            <i class="fa-solid fa-check"></i>
+
+        </div>
+
+        <div>
+
+            <strong>Deleted Successfully..</strong>
+
+            <p>
+                Your expense has been deleted successfully.
+            </p>
+
+        </div>
+
+    </div>
+
+}
