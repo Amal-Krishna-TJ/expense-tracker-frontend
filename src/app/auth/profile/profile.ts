@@ -559,6 +559,18 @@ heroColors = [
 
         this.dashboard = res.dashboard;
 
+        this.animateNumber(this.dashboard.totalUsers, value => this.displayTotalUsers = value);
+
+        this.animateNumber(this.dashboard.totalExpenses, value => this.displayTotalExpense = value);
+
+        this.animateNumber(this.dashboard.totalBudgets, value => this.displayTotalBudgets = value);
+
+        this.animateNumber(this.dashboard.totalRecurring, value => this.displayTotalRecurring = value);
+        
+        this.animateNumber(this.dashboard.totalCategories, value => this.displayTotalCategories = value);
+
+        this.animateNumber(this.dashboard.monthlyExpense, value => this.displayThisMonthExpense = value);
+
       },
 
       error:(err)=>{
@@ -579,21 +591,9 @@ heroColors = [
 
         this.users = res.users.filter((user:any) => user.role !== 'admin');
 
-        this.animateNumber(this.dashboard.totalUsers, value => this.displayTotalUsers = value);
-
         this.animateNumber(this.totalTransactions, value => this.displayTotalTransactionns = value);
-        
-        this.animateNumber(this.dashboard.totalExpenses, value => this.displayTotalExpense = value);
 
         this.animateNumber(this.averageExpense, value => this.displayAverageExpense = value);
-
-        this.animateNumber(this.dashboard.totalBudgets, value => this.displayTotalBudgets = value);
-
-        this.animateNumber(this.dashboard.totalRecurring, value => this.displayTotalRecurring = value);
-        
-        this.animateNumber(this.dashboard.totalCategories, value => this.displayTotalCategories = value);
-
-        this.animateNumber(this.dashboard.monthlyExpense, value => this.displayThisMonthExpense = value);
 
         this.currentPage = 1;
               
