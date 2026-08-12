@@ -42,10 +42,6 @@ body{
 
 }
 
-*{
-    background-color: #FFFFF4;
-}
-
 @keyframes float{
 
     0%{transform:translateY(0);}
