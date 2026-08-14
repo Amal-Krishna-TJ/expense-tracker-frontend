@@ -26,7 +26,7 @@ export class Contact implements OnInit {
 
     subject: ['', Validators.required],
 
-    messsage: ['', Validators.required]
+    message: ['', Validators.required]
 
   });
   }
