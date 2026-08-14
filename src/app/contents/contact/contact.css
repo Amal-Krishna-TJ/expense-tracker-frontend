@@ -240,3 +240,119 @@
     transform: scale(1.1);
 
 }
+
+/* Success */
+.success-toast {
+
+    position: fixed;
+
+    right: 30px;
+
+    bottom: 30px;
+
+    background: #003049;
+
+    color: white;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 18px 25px;
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,.25);
+
+    z-index: 10000;
+
+    animation: slideToast .5s ease;
+
+}
+
+.success-toast p {
+
+    margin: 3px 0 0;
+
+    font-size: 13px;
+
+}
+
+.success-icon {
+
+    width: 40px;
+
+    height: 40px;
+
+    background: #00BF7C;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+}
+
+/* Failed */
+.failed-toast {
+
+    position: fixed;
+
+    right: 30px;
+
+    bottom: 30px;
+
+    background: #003049;
+
+    color: white;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 18px 25px;
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,.25);
+
+    z-index: 10000;
+
+    animation: slideToast .5s ease;
+
+}
+
+.failed-toast p {
+
+    margin: 3px 0 0;
+
+    font-size: 13px;
+
+}
+
+.failed-icon {
+
+    width: 40px;
+
+    height: 40px;
+
+    background: #ff0000;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+}
