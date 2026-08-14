@@ -49,7 +49,7 @@
                     
                         <h5>📞 Phone</h5>
                     
-                        <p>+91 98765 43210</p>
+                        <p>+91 85930 09397</p>
                     
                     </div>
                 
@@ -57,7 +57,7 @@
                     
                         <h5>✉ Email</h5>
                     
-                        <p>support@expensetracker.com</p>
+                        <p>adminmailer3@gmail.com</p>
                     
                     </div>
                 
@@ -65,7 +65,7 @@
                     
                         <h5>🕒 Working Hours</h5>
                     
-                        <p>Monday - Saturday<br>9:00 AM - 6:00 PM</p>
+                        <p>Monday - Sunday<br>12:00 AM - 11:59 PM</p>
                     
                     </div>
                 
@@ -79,7 +79,7 @@
                     
                         <h3 class="mb-4">Send a Message</h3>
                     
-                        <form>
+                        <form [formGroup]="mailForm" (ngSubmit)="sendMail()">
                         
                             <div class="row">
                             
@@ -88,7 +88,8 @@
                                     <input
                                         type="text"
                                         class="form-control"
-                                        placeholder="Your Name">
+                                        placeholder="Your Name"
+                                        formControlName="username">
                                 
                                 </div>
                             
@@ -97,7 +98,8 @@
                                     <input
                                         type="email"
                                         class="form-control"
-                                        placeholder="Email Address">
+                                        placeholder="Email Address"
+                                        formControlName="email">
                                 
                                 </div>
                             
@@ -106,14 +108,17 @@
                             <input
                                 type="text"
                                 class="form-control mb-3"
-                                placeholder="Subject">
+                                placeholder="Subject"
+                                formControlName="subject">
                         
                             <textarea
                                 class="form-control mb-4"
                                 rows="6"
-                                placeholder="Your Message"></textarea>
+                                placeholder="Your Message"
+                                formControlName="message">
+                            </textarea>
                         
-                            <button class="btn send-btn">
+                            <button class="btn send-btn" type="submit" [disabled]="isLoading">
                             
                                 Send Message
                             
@@ -159,3 +164,79 @@
     </div>
 
 </section>
+
+
+<!-- Mail Loading Popup -->
+@if(isLoading) {
+
+    <div class="login-loading-overlay">
+
+        <div class="loading-container">
+
+            <div class="spinner-border login-spinner">
+                <span class="visually-hidden">
+                    Loading...
+                </span>
+            </div>
+
+            <h3>Login Successful!</h3>
+
+            <p>
+                Preparing your dashboard...
+            </p>
+
+        </div>
+
+    </div>
+
+}
+
+<!-- LOGIN SUCCESS POPUP -->
+@if(showSuccess) {
+
+    <div class="failed-toast">
+
+        <div class="failed-icon">
+
+            <i class="fa-solid fa-xmark"></i>
+
+        </div>
+
+        <div>
+
+            <strong>Mail Send Successfully!</strong>
+
+            <p>
+                Our expense tracker will contact you asap...
+            </p>
+
+        </div>
+
+    </div>
+
+}
+
+<!-- LOGIN ERROR POPUP -->
+@if(showFailed) {
+
+    <div class="failed-toast">
+
+        <div class="failed-icon">
+
+            <i class="fa-solid fa-xmark"></i>
+
+        </div>
+
+        <div>
+
+            <strong>Something Went Wrong!</strong>
+
+            <p>
+                Retry sending the mail...
+            </p>
+
+        </div>
+
+    </div>
+
+}
