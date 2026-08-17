@@ -356,3 +356,68 @@
     align-items: center;
 
 }
+
+/* =========================
+   CONTACT LOADING OVERLAY
+========================= */
+
+.mail-loading-overlay {
+
+    position: fixed;
+    inset: 0;
+
+    background: rgba(0, 48, 73, 0.96);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 99999;
+
+    animation: loadingFadeIn .3s ease;
+
+}
+
+
+/* Loading Container */
+
+.loading-container {
+
+    width: 550px;
+    max-width: 90%;
+
+    text-align: center;
+
+    color: #FFFFF4;
+
+}
+
+
+/* Spinner */
+
+.mail-spinner {
+
+    width: 60px;
+    height: 60px;
+
+    color: #F77F00;
+
+    margin-bottom: 20px;
+
+}
+
+
+.loading-container h3 {
+
+    font-weight: 700;
+    margin-bottom: 8px;
+
+}
+
+
+.loading-container p {
+
+    opacity: .8;
+    margin-bottom: 35px;
+
+}
