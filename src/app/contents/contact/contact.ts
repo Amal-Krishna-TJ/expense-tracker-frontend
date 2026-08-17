@@ -193,7 +193,7 @@ export class Contact implements OnInit {
         return;
       }
     }
-  
+
     // Start loading screen
     this.isLoading = true;
   

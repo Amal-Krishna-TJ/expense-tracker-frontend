@@ -7,7 +7,7 @@ body{
 :host {
     display: block;
     height: 100%;
-    min-height: 100vh;
+    min-height: 1300px;
     background: #FFFFF4;
 }
 
