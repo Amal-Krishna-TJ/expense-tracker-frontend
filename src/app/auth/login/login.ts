@@ -54,6 +54,15 @@ export class Login {
 
 }
 
+isPasswordValid(): boolean {
+
+    return !!this.newPassword &&
+           !!this.confirmPassword &&
+           this.newPassword === this.confirmPassword &&
+           this.newPassword.length >= 8;
+
+}
+
 //Eye button in passsword
 showEye() {
   this.showEyeValue = !this.showEyeValue;

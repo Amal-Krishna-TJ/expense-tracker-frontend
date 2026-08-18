@@ -323,7 +323,7 @@
 
         @if(step===3){
 
-            <div>
+            <div [style.cursor]="isPasswordValid() ? 'pointer' : 'not-allowed'">
             
                 <p class="reset-description">
                 
@@ -454,30 +454,18 @@
             
             
                 <button
-            
                     class="btn btn-update w-100 mt-4"
-            
                     (click)="changePassword()"
-            
-                    [disabled]="
-            
-                        !newPassword ||
-            
-                        !confirmPassword ||
-            
-                        newPassword !== confirmPassword ||
-            
-                        newPassword.length < 8
-            
-                    ">
-            
-                    <i class="fa-solid"
-                        [ngClass]="{
-                            'fa-lock': !newPassword || !confirmPassword || newPassword !== confirmPassword || newPassword.length < 8,
-                            'fa-lock-open': newPassword && confirmPassword && newPassword === confirmPassword && newPassword.length >= 8}"></i>
-            
+                    [disabled]="!isPasswordValid()"
+                    [style.pointer-events]="isPasswordValid() ? 'auto' : 'none'">
+
+                    <i
+                        class="fa-solid"
+                        [ngClass]="isPasswordValid() ? 'fa-lock-open' : 'fa-lock'">
+                    </i>
+                
                     Update Password
-            
+                
                 </button>
             
             </div>
