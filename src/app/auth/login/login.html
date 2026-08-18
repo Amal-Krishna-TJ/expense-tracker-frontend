@@ -455,7 +455,7 @@
             
                 <button
             
-                    class="btn btn-warning w-100 mt-4"
+                    class="btn btn-update w-100 mt-4"
             
                     (click)="changePassword()"
             
@@ -467,11 +467,14 @@
             
                         newPassword !== confirmPassword ||
             
-                        newPassword.length < 6
+                        newPassword.length < 8
             
                     ">
             
-                    <i class="fa-solid fa-lock"></i>
+                    <i class="fa-solid"
+                        [ngClass]="{
+                            'fa-lock': !newPassword || !confirmPassword || newPassword !== confirmPassword || newPassword.length < 8,
+                            'fa-lock-open': newPassword && confirmPassword && newPassword === confirmPassword && newPassword.length >= 8}"></i>
             
                     Update Password
             
